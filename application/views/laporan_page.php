@@ -97,7 +97,7 @@
           </a>
         </li>
         <li>
-          <a href="<?php echo base_url('index.php/laporan');?>">
+          <a href="<?php echo base_url('index.php/auth');?>">
             <i class="fa fa-book"></i> <span>Laporan</span>
           </a>
         </li>
@@ -110,7 +110,7 @@
           </a>
           <ul class="treeview-menu">
             <li><a href="<?php echo base_url('index.php/crud/create');?>"><i class="fa fa-circle-o"></i> Tambah</a></li>
-            <li><a href="<?php echo base_url('index.php/excel/import');?>"><i class="fa fa-circle-o"></i> Import</a></li>
+            <li><a href="<?php echo base_url('index.php/excel/importPage');?>"><i class="fa fa-circle-o"></i> Import</a></li>
             <li><a href="<?php echo base_url('index.php/excel/export');?>"><i class="fa fa-circle-o"></i> Export</a></li>
           </ul>
         </li>
@@ -123,196 +123,88 @@
   <div class="content-wrapper">
     <!-- Content Header (Page header) -->
     <section class="content-header">
-      <h1>
-        Ubah Access Point
-      </h1>
-      <ol class="breadcrumb">
-        <li><i class="fa fa-dashboard"></i> Home</li>
-      </ol>
+      <div class="row">
+        <!-- ./col -->
+        <div class="col-lg-6 col-xs-6">
+          <!-- small box -->
+          <div class="small-box bg-green">
+            <div class="inner">
+              <h3><?php echo $allApCount['cisco'];?></h3>
+
+              <p>Jumlah AP CISCO</p>
+            </div>
+            <div class="icon">
+              <i class="fa fa-podcast"></i>
+            </div>
+            <div class="small-box-footer">CISCO</div>
+          </div>
+        </div>
+        <!-- ./col -->
+        <div class="col-lg-6 col-xs-6">
+          <!-- small box -->
+          <div class="small-box bg-yellow">
+            <div class="inner">
+              <h3><?php echo $allApCount['huawei'];?></h3>
+
+              <p>Jumlah AP HUAWEI</p>
+            </div>
+            <div class="icon">
+              <i class="fa fa-podcast"></i>
+            </div>
+            <div class="small-box-footer">HUAWEI</div>
+          </div>
+        </div>
+        <!-- ./col -->
+      </div>
     </section>
 
     <!-- Main content -->
     <section class="content">
       <div class="row">
-        <div class="col-lg-12">
+        <div class="col-lg-6">
           
           <!-- /.box -->
 
-          <div class="box box-primary">
-            <!-- /.box-header -->
-            <!-- form start -->
-            <form action="<?php echo base_url('index.php/crud/update/'.$id);?>" class="form-horizontal" method="POST">
-              <div class="box-body">
-                <div class="row">
-                  <div class="col-md-6">
-                    <div class="form-group">
-                      <label for="inputEmail3" class="col-sm-3 control-label">Merk</label>
-                      <div class="col-sm-9">
-                        <input type="text" class="form-control" id="merk" name="merk" value="<?php echo $merk;?>">
-                      </div>
-                    </div>
-                  </div>
-                  <div class="col-md-6">
-                    <div class="form-group">
-                      <label for="inputEmail3" class="col-sm-3 control-label">Tipe</label>
-                      <div class="col-sm-9">
-                        <input type="text" class="form-control" id="tipe" name="tipe" value="<?php echo $type;?>">
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div class="row">
-                  <div class="col-md-6">
-                    <div class="form-group">
-                      <label for="inputEmail3" class="col-sm-3 control-label">Serial Number</label>
-                      <div class="col-sm-9">
-                        <input type="text" class="form-control" id="serial-number" name="serial_number" value="<?php echo $sn;?>">
-                      </div>
-                    </div>
-                  </div>
-                  <div class="col-md-6">
-                    <div class="form-group">
-                      <label for="inputEmail3" class="col-sm-3 control-label">Mac Address</label>
-                      <div class="col-sm-9">
-                        <input type="text" class="form-control" id="mac-address" name="mac_address" value="<?php echo $mac_address;?>">
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div class="row">
-                  <div class="col-md-6">
-                    <div class="form-group">
-                      <label for="inputEmail3" class="col-sm-3 control-label">Status AP</label>
-                      <div class="col-sm-9">
-                        <input type="text" class="form-control" id="status-ap" name="status_ap" value="<?php echo $status_ap;?>">
-                      </div>
-                    </div>
-                  </div>
-                  <div class="col-md-6">
-                    <div class="form-group">
-                      <label for="inputEmail3" class="col-sm-3 control-label">Paket AP</label>
-                      <div class="col-sm-9">
-                        <input type="text" class="form-control" id="drop-from" name="paket_ap" value="<?php echo $paket_ap;?>">
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div class="row">
-                  <div class="col-md-6">
-                    <div class="form-group">
-                      <label for="inputEmail3" class="col-sm-3 control-label">Location type</label>
-                      <div class="col-sm-9">
-                        <input type="text" class="form-control" id="status-ap" name="location_type" value="<?php echo $location_type;?>">
-                      </div>
-                    </div>
-                  </div>
-                  <div class="col-md-6">
-                    <div class="form-group">
-                      <label for="inputEmail3" class="col-sm-3 control-label">Customer</label>
-                      <div class="col-sm-9">
-                        <input type="text" class="form-control" id="location-type" name="customer" value="<?php echo $customer;?>">
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div class="row">
-                  <div class="col-md-6">
-                    <div class="form-group">
-                      <label for="inputEmail3" class="col-sm-3 control-label">Alamat</label>
-                      <div class="col-sm-9">
-                        <input type="text" class="form-control" id="customer" name="alamat" value="<?php echo $alamat;?>">
-                      </div>
-                    </div>
-                  </div>
-                  <div class="col-md-6">
-                    <div class="form-group">
-                      <label for="inputEmail3" class="col-sm-3 control-label">Skema Bisnis</label>
-                      <div class="col-sm-9">
-                        <input type="text" class="form-control" id="alamat" name="skema_bisnis" value="<?php echo $skema_bisnis;?>">
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div class="row">
-                  <div class="col-md-6">
-                    <div class="form-group">
-                      <label for="inputEmail3" class="col-sm-3 control-label">SSID</label>
-                      <div class="col-sm-9">
-                        <input type="text" class="form-control" id="skema-bisnis" name="ssid" value="<?php echo $ssid;?>">
-                      </div>
-                    </div>
-                  </div>
-                  <div class="col-md-6">
-                    <div class="form-group">
-                      <label for="inputEmail3" class="col-sm-3 control-label">Posisi AP</label>
-                      <div class="col-sm-9">
-                        <input type="text" class="form-control" id="ssi" name="posisi_ap" value="<?php echo $posisi_ap;?>">
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div class="row">
-                  <div class="col-md-6">
-                    <div class="form-group">
-                      <label for="inputEmail3" class="col-sm-3 control-label">Tahun Aktif</label>
-                      <div class="col-sm-9">
-                        <input type="text" class="form-control" id="posisi-ap" name="tahun_aktif" value="<?php echo $tahun_aktif;?>">
-                      </div>
-                    </div>
-                  </div>
-                  <div class="col-md-6">
-                    <div class="form-group">
-                      <label for="inputEmail3" class="col-sm-3 control-label">Bulan Aktif</label>
-                      <div class="col-sm-9">
-                        <input type="text" class="form-control" id="tahun-aktif" name="bulan_aktif" value="<?php echo $bulan_aktif;?>">
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div class="row">
-                  <div class="col-md-6">
-                    <div class="form-group">
-                      <label for="inputEmail3" class="col-sm-3 control-label">STO</label>
-                      <div class="col-sm-9">
-                        <input type="text" class="form-control" id="bulan-aktif" name="sto" value="<?php echo $sto;?>">
-                      </div>
-                    </div>
-                  </div>
-                  <div class="col-md-6">
-                    <div class="form-group">
-                      <label for="inputEmail3" class="col-sm-3 control-label">No Inet</label>
-                      <div class="col-sm-9">
-                        <input type="text" class="form-control" id="sto" name="no_inet" value="<?php echo $no_inet;?>">
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              <!-- /.box-body -->
-              <div class="box-footer">
-                <button type="button" class="btn btn-success pull-right" data-toggle="modal" data-target="#myModal">Simpan</button>
-              </div>
-              <!-- /.box-footer -->
+          <div class="box box-success">
+            <div class="box-header with-border">
+              <h3 class="box-title">Data AP CISCO</h3>
 
-              <!-- modal -->
-              <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-                <div class="modal-dialog" role="document">
-                  <div class="modal-content">
-                    <div class="modal-header">
-                      <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                      <h4 class="modal-title" id="myModalLabel">Peringatan</h4>
-                    </div>
-                    <div class="modal-body">
-                      Apakah anda yakin akan mengubah data tersebut ?
-                    </div>
-                    <div class="modal-footer">
-                      <button type="button" class="btn btn-default" data-dismiss="modal">Tidak</button>
-                      <button type="submit" class="btn btn-primary">Ubah</button>
-                    </div>
-                  </div>
-                </div>
+              <div class="box-tools pull-right">
+                <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>
+                </button>
+                <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
               </div>
-            </form>
+            </div>
+            <!-- form start -->
+            <div class="box-body">
+              <canvas id="pieChart" style="height:250px"></canvas>
+            </div>
+              <!-- /.box-body -->
           </div>
+          <!-- /.box -->
+        </div>
+        <div class="col-lg-6">
+          
+          <!-- /.box -->
+
+          <div class="box box-warning">
+            <div class="box-header with-border">
+              <h3 class="box-title">Data AP HUAWEI</h3>
+
+              <div class="box-tools pull-right">
+                <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>
+                </button>
+                <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
+              </div>
+            </div>
+            <!-- form start -->
+            <div class="box-body">
+              <canvas id="pieChart2" style="height:250px"></canvas>
+            </div>
+              <!-- /.box-body -->
+          </div>
+          <!-- /.box -->
+        </div>
           <!-- /.box -->
         </div>
         <!-- /.col -->
@@ -445,6 +337,10 @@
 <!-- AdminLTE for demo purposes -->
 <script src="https://adminlte.io/themes/AdminLTE/dist/js/demo.js"></script>
 <!-- page script -->
+<!-- ChartJS -->
+<script src="https://adminlte.io/themes/AdminLTE/bower_components/chart.js/Chart.js"></script>
+
+
 <script>
   $(function () {
     $('#example1').DataTable()
@@ -456,6 +352,110 @@
       'info'        : true,
       'autoWidth'   : false
     })
+
+
+    // Pie Chart CISCO
+    var pieChartCanvas = $('#pieChart').get(0).getContext('2d')
+    var pieChart       = new Chart(pieChartCanvas)
+    var PieData        = [
+      {
+        value    : <?php echo $ciscoSummary['rusak'];?>,
+        color    : '#f56954',
+        highlight: '#f56954',
+        label    : 'Rusak'
+      },
+      {
+        value    : <?php echo $ciscoSummary['baik'];?>,
+        color    : '#3c8dbc',
+        highlight: '#3c8dbc',
+        label    : 'Baik'
+      },
+      {
+        value    : <?php echo $ciscoSummary['unknown'];?>,
+        color    : '#d9dce2',
+        highlight: '#d9dce2',
+        label    : 'Unknown'
+      }
+    ]
+    var pieOptions     = {
+      //Boolean - Whether we should show a stroke on each segment
+      segmentShowStroke    : true,
+      //String - The colour of each segment stroke
+      segmentStrokeColor   : '#fff',
+      //Number - The width of each segment stroke
+      segmentStrokeWidth   : 2,
+      //Number - The percentage of the chart that we cut out of the middle
+      percentageInnerCutout: 50, // This is 0 for Pie charts
+      //Number - Amount of animation steps
+      animationSteps       : 100,
+      //String - Animation easing effect
+      animationEasing      : 'easeOutBounce',
+      //Boolean - Whether we animate the rotation of the Doughnut
+      animateRotate        : true,
+      //Boolean - Whether we animate scaling the Doughnut from the centre
+      animateScale         : false,
+      //Boolean - whether to make the chart responsive to window resizing
+      responsive           : true,
+      // Boolean - whether to maintain the starting aspect ratio or not when responsive, if set to false, will take up entire container
+      maintainAspectRatio  : true,
+      //String - A legend template
+      legendTemplate       : '<ul class="<%=name.toLowerCase()%>-legend"><% for (var i=0; i<segments.length; i++){%><li><span style="background-color:<%=segments[i].fillColor%>"></span><%if(segments[i].label){%><%=segments[i].label%><%}%></li><%}%></ul>'
+    }
+    //Create pie or douhnut chart
+    // You can switch between pie and douhnut using the method below.
+    pieChart.Doughnut(PieData, pieOptions)
+
+    // Pie Chart HUAWEI
+    var pieChartCanvas = $('#pieChart2').get(0).getContext('2d')
+    var pieChart       = new Chart(pieChartCanvas)
+    var PieData        = [
+      {
+        value    : <?php echo $huaweiSummary['rusak'];?>,
+        color    : '#f56954',
+        highlight: '#f56954',
+        label    : 'Rusak'
+      },
+      {
+        value    : <?php echo $huaweiSummary['baik'];?>,
+        color    : '#3c8dbc',
+        highlight: '#3c8dbc',
+        label    : 'Baik'
+      },
+      {
+        value    : <?php echo $huaweiSummary['unknown'];?>,
+        color    : '#d9dce2',
+        highlight: '#d9dce2',
+        label    : 'Unknown'
+      }
+    ]
+    var pieOptions     = {
+      //Boolean - Whether we should show a stroke on each segment
+      segmentShowStroke    : true,
+      //String - The colour of each segment stroke
+      segmentStrokeColor   : '#fff',
+      //Number - The width of each segment stroke
+      segmentStrokeWidth   : 2,
+      //Number - The percentage of the chart that we cut out of the middle
+      percentageInnerCutout: 50, // This is 0 for Pie charts
+      //Number - Amount of animation steps
+      animationSteps       : 100,
+      //String - Animation easing effect
+      animationEasing      : 'easeOutBounce',
+      //Boolean - Whether we animate the rotation of the Doughnut
+      animateRotate        : true,
+      //Boolean - Whether we animate scaling the Doughnut from the centre
+      animateScale         : false,
+      //Boolean - whether to make the chart responsive to window resizing
+      responsive           : true,
+      // Boolean - whether to maintain the starting aspect ratio or not when responsive, if set to false, will take up entire container
+      maintainAspectRatio  : true,
+      //String - A legend template
+      legendTemplate       : '<ul class="<%=name.toLowerCase()%>-legend"><% for (var i=0; i<segments.length; i++){%><li><span style="background-color:<%=segments[i].fillColor%>"></span><%if(segments[i].label){%><%=segments[i].label%><%}%></li><%}%></ul>'
+    }
+    //Create pie or douhnut chart
+    // You can switch between pie and douhnut using the method below.
+    pieChart.Doughnut(PieData, pieOptions)
+
   })
 </script>
 </body>

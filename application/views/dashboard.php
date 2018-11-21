@@ -96,6 +96,11 @@
             <i class="fa fa-dashboard"></i> <span>Dashboard</span>
           </a>
         </li>
+        <li>
+          <a href="<?php echo base_url('index.php/laporan');?>">
+            <i class="fa fa-book"></i> <span>Laporan</span>
+          </a>
+        </li>
         <li class="treeview">
           <a href="#">
             <i class="fa fa-edit"></i> <span>Data</span>
@@ -146,19 +151,7 @@
                   <th>Tipe</th>
                   <th>SN</th>
                   <th>Mac Address</th>
-                  <th>Drop</th>
-                  <th>Tanggal Drop</th>
                   <th>Status AP</th>
-                  <th>Location Type</th>
-                  <th>Customer</th>
-                  <th>Alamat</th>
-                  <th>Skema Bisnis</th>
-                  <th>SSID</th>
-                  <th>Posisi AP</th>
-                  <th>Tahun Aktif</th>
-                  <th>Bulan Aktif</th>
-                  <th>STO</th>
-                  <th>No Inet</th>
                   <th>Update Terakhir</th>
                   <th>Pilihan</th>
                 </tr>
@@ -166,25 +159,13 @@
                 <tbody>
                   <?php foreach ($hasil as $row){?>
                   <tr>
-                    <td><?php echo $row['id'];?></td>
-                    <td><?php echo $row['merk'];?></td>
-                    <td><?php echo $row['type'];?></td>
-                    <td><?php echo $row['sn'];?></td>
-                    <td><?php echo $row['mac_address'];?></td>
-                    <td><?php echo $row['drop_from'];?></td>
-                    <td><?php echo $row['tgl_drop'];?></td>
-                    <td><?php echo $row['status_ap'];?></td>
-                    <td><?php echo $row['location_type'];?></td>
-                    <td><?php echo $row['customer'];?></td>
-                    <td><?php echo $row['alamat'];?></td>
-                    <td><?php echo $row['skema_bisnis'];?></td>
-                    <td><?php echo $row['ssid'];?></td>
-                    <td><?php echo $row['posisi_ap'];?></td>
-                    <td><?php echo $row['tahun_aktif'];?></td>
-                    <td><?php echo $row['bulan_aktif'];?></td>
-                    <td><?php echo $row['sto'];?></td>
-                    <td><?php echo $row['no_inet'];?></td>
-                    <td><?php echo $row['last_update'];?></td>
+                    <td><a data-toggle="modal" data-target="#detailModal<?php echo $row['id'];?>"><?php echo $row['id'];?></a></td>
+                    <td><a data-toggle="modal" data-target="#detailModal<?php echo $row['id'];?>"><?php echo $row['merk'];?></a></td>
+                    <td><a data-toggle="modal" data-target="#detailModal<?php echo $row['id'];?>"><?php echo $row['type'];?></a></td>
+                    <td><a data-toggle="modal" data-target="#detailModal<?php echo $row['id'];?>"><?php echo $row['sn'];?></a></td>
+                    <td><a data-toggle="modal" data-target="#detailModal<?php echo $row['id'];?>"><?php echo $row['mac_address'];?></a></td>
+                    <td><a data-toggle="modal" data-target="#detailModal<?php echo $row['id'];?>"><?php echo $row['status_ap'];?></a></td>
+                    <td><a data-toggle="modal" data-target="#detailModal<?php echo $row['id'];?>"><?php echo $row['last_update'];?></a></td>
                     <td>
                       <a href="<?php echo base_url('index.php/crud/edit/'.$row['id']);?>">
                         <button type="button" class="btn btn-primary btn-sm">Ubah</button>
@@ -192,6 +173,8 @@
                       <button type="button" class="btn btn-danger btn-sm" data-toggle="modal" data-target="#myModal<?php echo $row['id'];?>">
                       Hapus
                     </button>
+                    
+                    <!-- Modal Hapus -->
                     <div class="modal fade" id="myModal<?php echo $row['id'];?>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
                       <div class="modal-dialog" role="document">
                         <div class="modal-content">
@@ -209,6 +192,150 @@
                         </div>
                       </div>
                     </div>
+
+                    <!-- Modal detail -->
+                    <div class="modal fade bs-example-modal-lg" id="detailModal<?php echo $row['id'];?>" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
+                      <div class="modal-dialog modal-lg" role="document">
+                        <div class="modal-content">
+                          <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                            <h4 class="modal-title" id="myModalLabel">Detail Access Point</h4>
+                          </div>
+                          <div class="modal-body">
+                            <div class="row">
+                              <div class="col-md-3">
+                                <label for="inputEmail3" class="col-sm-3 control-label">Merk</label>
+                              </div>
+                              <div class="col-md-3">
+                                <?php echo $row['merk'];?>
+                              </div>
+                              <div class="col-md-3">
+                                <label for="inputEmail3" class="col-sm-3 control-label">Tipe</label>
+                              </div>
+                              <div class="col-md-3">
+                                <?php echo $row['type'];?>
+                              </div>
+                            </div>
+                            <div class="row">
+                              <div class="col-md-3">
+                                <label for="inputEmail3" class="col-sm-3 control-label">Serial Number</label>
+                              </div>
+                              <div class="col-md-3">
+                                <?php echo $row['sn'];?>
+                              </div>
+                              <div class="col-md-3">
+                                <label for="inputEmail3" class="col-sm-3 control-label">Mac Address</label>
+                              </div>
+                              <div class="col-md-3">
+                                <?php echo $row['mac_address'];?>
+                              </div>
+                            </div>
+                            <div class="row">
+                              <div class="col-md-3">
+                                <label for="inputEmail3" class="col-sm-3 control-label">Status AP</label>
+                              </div>
+                              <div class="col-md-3">
+                                <?php echo $row['status_ap'];?>
+                              </div>
+                              <div class="col-md-3">
+                                <label for="inputEmail3" class="col-sm-3 control-label">Paket AP</label>
+                              </div>
+                              <div class="col-md-3">
+                                <?php echo $row['paket_ap'];?>
+                              </div>
+                            </div>
+                            <div class="row">
+                              <div class="col-md-3">
+                                <label for="inputEmail3" class="col-sm-3 control-label">Location Type</label>
+                              </div>
+                              <div class="col-md-3">
+                                <?php echo $row['location_type'];?>
+                              </div>
+                              <div class="col-md-3">
+                                <label for="inputEmail3" class="col-sm-3 control-label">Customer</label>
+                              </div>
+                              <div class="col-md-3">
+                                <?php echo $row['customer'];?>
+                              </div>
+                            </div>
+                            <div class="row">
+                              <div class="col-md-3">
+                                <label for="inputEmail3" class="col-sm-3 control-label">Alamat</label>
+                              </div>
+                              <div class="col-md-3">
+                                <?php echo $row['alamat'];?>
+                              </div>
+                              <div class="col-md-3">
+                                <label for="inputEmail3" class="col-sm-3 control-label">Skema Bisnis</label>
+                              </div>
+                              <div class="col-md-3">
+                                <?php echo $row['skema_bisnis'];?>
+                              </div>
+                            </div>
+                            <div class="row">
+                              <div class="col-md-3">
+                                <label for="inputEmail3" class="col-sm-3 control-label">SSID</label>
+                              </div>
+                              <div class="col-md-3">
+                                <?php echo $row['ssid'];?>
+                              </div>
+                              <div class="col-md-3">
+                                <label for="inputEmail3" class="col-sm-3 control-label">Posisi AP</label>
+                              </div>
+                              <div class="col-md-3">
+                                <?php echo $row['posisi_ap'];?>
+                              </div>
+                            </div>
+                            <div class="row">
+                              <div class="col-md-3">
+                                <label for="inputEmail3" class="col-sm-3 control-label">Tahun Aktif</label>
+                              </div>
+                              <div class="col-md-3">
+                                <?php echo $row['tahun_aktif'];?>
+                              </div>
+                              <div class="col-md-3">
+                                <label for="inputEmail3" class="col-sm-3 control-label">Bulan Aktif</label>
+                              </div>
+                              <div class="col-md-3">
+                                <?php echo $row['bulan_aktif'];?>
+                              </div>
+                            </div>
+                            <div class="row">
+                              <div class="col-md-3">
+                                <label for="inputEmail3" class="col-sm-3 control-label">STO</label>
+                              </div>
+                              <div class="col-md-3">
+                                <?php echo $row['sto'];?>
+                              </div>
+                              <div class="col-md-3">
+                                <label for="inputEmail3" class="col-sm-3 control-label">No Inet</label>
+                              </div>
+                              <div class="col-md-3">
+                                <?php echo $row['no_inet'];?>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="modal-footer">
+                            
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <!--  -->
+                    <div class="modal fade" id="detailModal<?php echo $row['id'];?>" tabindex="-1" role="dialog" aria-labelledby="detailModalLabel">
+                      <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                          <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                            <h4 class="modal-title" id="myModalLabel">Detail Access Point</h4>
+                          </div>
+                          <div class="modal-body">
+                            
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
                     </td>
                   </tr>
                 <?php }?>

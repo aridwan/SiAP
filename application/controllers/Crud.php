@@ -22,9 +22,8 @@ class Crud extends CI_Controller {
 					'type' => $_POST['tipe'],
 					'sn' => $_POST['serial_number'],
 					'mac_address' => $_POST['mac_address'],
-					'drop_from' => $_POST['drop_from'],
-					'tgl_drop' => $_POST['tanggal_drop'],
 					'status_ap' => $_POST['status_ap'],
+					'paket_ap' => $_POST['drop_from'],
 					'location_type' => $_POST['location_type'],
 					'customer' => $_POST['customer'],
 					'alamat' => $_POST['alamat'],
@@ -48,14 +47,14 @@ class Crud extends CI_Controller {
 
 	public function update($id){
 		$this->db->where('id',$id);
+		$timestamps = new DateTime();
 		$data = array(
 					'merk' => $_POST['merk'],
 					'type' => $_POST['tipe'],
 					'sn' => $_POST['serial_number'],
 					'mac_address' => $_POST['mac_address'],
-					'drop_from' => $_POST['drop_from'],
-					'tgl_drop' => $_POST['tanggal_drop'],
 					'status_ap' => $_POST['status_ap'],
+					'paket_ap' => $_POST['paket_ap'],
 					'location_type' => $_POST['location_type'],
 					'customer' => $_POST['customer'],
 					'alamat' => $_POST['alamat'],
@@ -66,7 +65,7 @@ class Crud extends CI_Controller {
 					'bulan_aktif' => $_POST['bulan_aktif'],
 					'sto' => $_POST['sto'],
 					'no_inet' => $_POST['no_inet'],
-					'last_update' => date("d-m-Y")
+					'last_update' => $timestamps->format('d-m-Y H:i:s')
 				);
 		$this->db->update('access_point',$data);
 		redirect('auth/index');

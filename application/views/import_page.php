@@ -96,6 +96,11 @@
             <i class="fa fa-dashboard"></i> <span>Dashboard</span>
           </a>
         </li>
+        <li>
+          <a href="<?php echo base_url('index.php/laporan');?>">
+            <i class="fa fa-book"></i> <span>Laporan</span>
+          </a>
+        </li>
         <li class="treeview">
           <a href="#">
             <i class="fa fa-edit"></i> <span>Data</span>

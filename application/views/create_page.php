@@ -96,6 +96,11 @@
             <i class="fa fa-dashboard"></i> <span>Dashboard</span>
           </a>
         </li>
+        <li>
+          <a href="<?php echo base_url('index.php/laporan');?>">
+            <i class="fa fa-book"></i> <span>Laporan</span>
+          </a>
+        </li>
         <li class="treeview">
           <a href="#">
             <i class="fa fa-edit"></i> <span>Data</span>
@@ -143,7 +148,7 @@
                     <div class="form-group">
                       <label for="inputEmail3" class="col-sm-3 control-label">Merk</label>
                       <div class="col-sm-9">
-                        <input type="text" class="form-control" id="merk" name="merk">
+                        <input type="text" class="form-control" id="merk" name="merk" >
                       </div>
                     </div>
                   </div>
@@ -151,7 +156,7 @@
                     <div class="form-group">
                       <label for="inputEmail3" class="col-sm-3 control-label">Tipe</label>
                       <div class="col-sm-9">
-                        <input type="text" class="form-control" id="tipe" name="tipe">
+                        <input type="text" class="form-control" id="tipe" name="tipe" >
                       </div>
                     </div>
                   </div>
@@ -161,7 +166,7 @@
                     <div class="form-group">
                       <label for="inputEmail3" class="col-sm-3 control-label">Serial Number</label>
                       <div class="col-sm-9">
-                        <input type="text" class="form-control" id="serial-number" name="serial_number">
+                        <input type="text" class="form-control" id="serial-number" name="serial_number" >
                       </div>
                     </div>
                   </div>
@@ -169,25 +174,7 @@
                     <div class="form-group">
                       <label for="inputEmail3" class="col-sm-3 control-label">Mac Address</label>
                       <div class="col-sm-9">
-                        <input type="text" class="form-control" id="mac-address" name="mac_address">
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div class="row">
-                  <div class="col-md-6">
-                    <div class="form-group">
-                      <label for="inputEmail3" class="col-sm-3 control-label">Drop from</label>
-                      <div class="col-sm-9">
-                        <input type="text" class="form-control" id="drop-from" name="drop_from">
-                      </div>
-                    </div>
-                  </div>
-                  <div class="col-md-6">
-                    <div class="form-group">
-                      <label for="inputEmail3" class="col-sm-3 control-label">Tanggal Drop</label>
-                      <div class="col-sm-9">
-                        <input type="text" class="form-control" id="tanggal-drop" name="tanggal_drop">
+                        <input type="text" class="form-control" id="mac-address" name="mac_address" >
                       </div>
                     </div>
                   </div>
@@ -197,87 +184,87 @@
                     <div class="form-group">
                       <label for="inputEmail3" class="col-sm-3 control-label">Status AP</label>
                       <div class="col-sm-9">
-                        <input type="text" class="form-control" id="status-ap" name="status_ap">
+                        <input type="text" class="form-control" id="status-ap" name="status_ap" >
                       </div>
                     </div>
                   </div>
                   <div class="col-md-6">
                     <div class="form-group">
-                      <label for="inputEmail3" class="col-sm-3 control-label">Location Type</label>
+                      <label for="inputEmail3" class="col-sm-3 control-label">Paket AP</label>
                       <div class="col-sm-9">
-                        <input type="text" class="form-control" id="location-type" name="location_type">
+                        <input type="text" class="form-control" id="drop-from" name="paket_ap" >
                       </div>
                     </div>
                   </div>
                 </div>
                 <div class="row">
+                  <div class="col-md-6">
+                    <div class="form-group">
+                      <label for="inputEmail3" class="col-sm-3 control-label">Location type</label>
+                      <div class="col-sm-9">
+                        <input type="text" class="form-control" id="status-ap" name="location_type" >
+                      </div>
+                    </div>
+                  </div>
                   <div class="col-md-6">
                     <div class="form-group">
                       <label for="inputEmail3" class="col-sm-3 control-label">Customer</label>
                       <div class="col-sm-9">
-                        <input type="text" class="form-control" id="customer" name="customer">
+                        <input type="text" class="form-control" id="location-type" name="customer" >
                       </div>
                     </div>
                   </div>
+                </div>
+                <div class="row">
                   <div class="col-md-6">
                     <div class="form-group">
                       <label for="inputEmail3" class="col-sm-3 control-label">Alamat</label>
                       <div class="col-sm-9">
-                        <input type="text" class="form-control" id="alamat" name="alamat">
+                        <input type="text" class="form-control" id="customer" name="alamat" >
                       </div>
                     </div>
                   </div>
-                </div>
-                <div class="row">
                   <div class="col-md-6">
                     <div class="form-group">
                       <label for="inputEmail3" class="col-sm-3 control-label">Skema Bisnis</label>
                       <div class="col-sm-9">
-                        <input type="text" class="form-control" id="skema-bisnis" name="skema_bisnis">
+                        <input type="text" class="form-control" id="alamat" name="skema_bisnis" >
                       </div>
                     </div>
                   </div>
+                </div>
+                <div class="row">
                   <div class="col-md-6">
                     <div class="form-group">
                       <label for="inputEmail3" class="col-sm-3 control-label">SSID</label>
                       <div class="col-sm-9">
-                        <input type="text" class="form-control" id="ssi" name="ssid">
+                        <input type="text" class="form-control" id="skema-bisnis" name="ssid" >
                       </div>
                     </div>
                   </div>
-                </div>
-                <div class="row">
                   <div class="col-md-6">
                     <div class="form-group">
                       <label for="inputEmail3" class="col-sm-3 control-label">Posisi AP</label>
                       <div class="col-sm-9">
-                        <input type="text" class="form-control" id="posisi-ap" name="posisi_ap">
+                        <input type="text" class="form-control" id="ssi" name="posisi_ap" >
                       </div>
                     </div>
                   </div>
+                </div>
+                <div class="row">
                   <div class="col-md-6">
                     <div class="form-group">
                       <label for="inputEmail3" class="col-sm-3 control-label">Tahun Aktif</label>
                       <div class="col-sm-9">
-                        <input type="text" class="form-control" id="tahun-aktif" name="tahun_aktif">
+                        <input type="text" class="form-control" id="posisi-ap" name="tahun_aktif" >
                       </div>
                     </div>
                   </div>
-                </div>
-                <div class="row">
                   <div class="col-md-6">
                     <div class="form-group">
                       <label for="inputEmail3" class="col-sm-3 control-label">Bulan Aktif</label>
                       <div class="col-sm-9">
-                        <input type="text" class="form-control" id="bulan-aktif" name="bulan_aktif">
-                      </div>
-                    </div>
-                  </div>
-                  <div class="col-md-6">
-                    <div class="form-group">
-                      <label for="inputEmail3" class="col-sm-3 control-label">STO</label>
-                      <div class="col-sm-9">
-                        <input type="text" class="form-control" id="sto" name="sto">
+                        <input type="text" class="form-control" id="tahun-aktif" name="bulan_aktif" >
                       </div>
                     </div>
                   </div>
@@ -285,19 +272,45 @@
                 <div class="row">
                   <div class="col-md-6">
                     <div class="form-group">
+                      <label for="inputEmail3" class="col-sm-3 control-label">STO</label>
+                      <div class="col-sm-9">
+                        <input type="text" class="form-control" id="bulan-aktif" name="sto" >
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-6">
+                    <div class="form-group">
                       <label for="inputEmail3" class="col-sm-3 control-label">No Inet</label>
                       <div class="col-sm-9">
-                        <input type="text" class="form-control" id="no-inet" name="no_inet">
+                        <input type="text" class="form-control" id="sto" name="no_inet" >
                       </div>
                     </div>
                   </div>
                 </div>
-              </div>
               <!-- /.box-body -->
               <div class="box-footer">
-                <button type="submit" class="btn btn-success pull-right">Simpan</button>
+                <button type="button" class="btn btn-success pull-right" data-toggle="modal" data-target="#myModal">Simpan</button>
               </div>
               <!-- /.box-footer -->
+
+              <!-- modal -->
+              <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+                <div class="modal-dialog" role="document">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                      <h4 class="modal-title" id="myModalLabel">Peringatan</h4>
+                    </div>
+                    <div class="modal-body">
+                      Apakah anda yakin akan mengubah data tersebut ?
+                    </div>
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-default" data-dismiss="modal">Tidak</button>
+                      <button type="submit" class="btn btn-primary">Ubah</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </form>
           </div>
           <!-- /.box -->
