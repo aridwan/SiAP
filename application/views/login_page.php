@@ -35,6 +35,10 @@
   </div>
   <!-- /.login-logo -->
   <div class="login-box-body">
+    <div class="text-center">
+      <img src="../telkom.png">
+    </div>
+    <br>
     <p class="login-box-msg">Sign in to start your session</p>
     <?if(isset($error)){?>
         <?php

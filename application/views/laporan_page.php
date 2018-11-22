@@ -43,7 +43,7 @@
 
   <header class="main-header">
     <!-- Logo -->
-    <a href="../../index2.html" class="logo">
+    <a class="logo">
       <!-- mini logo for sidebar mini 50x50 pixels -->
       <span class="logo-mini"><b>Si</b>AP</span>
       <!-- logo for regular state and mobile devices -->
@@ -61,11 +61,10 @@
 
       <div class="navbar-custom-menu">
         <ul class="nav navbar-nav">
-          
           <!-- User Account: style can be found in dropdown.less -->
           <li class="dropdown user user-menu">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-              <span class="hidden-xs">Administrator</span>
+              <img src="../telkom2.png">&nbsp&nbsp&nbsp&nbsp<span class="hidden-xs">Administrator</span>
             </a>
             <ul class="dropdown-menu">
               <!-- Menu Footer-->
@@ -123,6 +122,13 @@
   <div class="content-wrapper">
     <!-- Content Header (Page header) -->
     <section class="content-header">
+      <h1>
+        Data Access Point Gudang Jakarta Utara
+      </h1>
+    </section>
+
+    <!-- Main content -->
+    <section class="content">
       <div class="row">
         <!-- ./col -->
         <div class="col-lg-6 col-xs-6">
@@ -131,7 +137,7 @@
             <div class="inner">
               <h3><?php echo $allApCount['cisco'];?></h3>
 
-              <p>Jumlah AP CISCO</p>
+              <p>AP CISCO di Gudang</p>
             </div>
             <div class="icon">
               <i class="fa fa-podcast"></i>
@@ -146,7 +152,7 @@
             <div class="inner">
               <h3><?php echo $allApCount['huawei'];?></h3>
 
-              <p>Jumlah AP HUAWEI</p>
+              <p>AP HUAWEI di Gudang</p>
             </div>
             <div class="icon">
               <i class="fa fa-podcast"></i>
@@ -156,10 +162,6 @@
         </div>
         <!-- ./col -->
       </div>
-    </section>
-
-    <!-- Main content -->
-    <section class="content">
       <div class="row">
         <div class="col-lg-6">
           
@@ -167,7 +169,7 @@
 
           <div class="box box-success">
             <div class="box-header with-border">
-              <h3 class="box-title">Data AP CISCO</h3>
+              <h3 class="box-title">Kondisi AP CISCO</h3>
 
               <div class="box-tools pull-right">
                 <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>
@@ -189,7 +191,7 @@
 
           <div class="box box-warning">
             <div class="box-header with-border">
-              <h3 class="box-title">Data AP HUAWEI</h3>
+              <h3 class="box-title">Kondisi AP HUAWEI</h3>
 
               <div class="box-tools pull-right">
                 <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>

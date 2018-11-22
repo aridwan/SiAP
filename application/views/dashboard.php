@@ -65,7 +65,7 @@
           <!-- User Account: style can be found in dropdown.less -->
           <li class="dropdown user user-menu">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-              <span class="hidden-xs">Administrator</span>
+              <img src="../telkom2.png">&nbsp&nbsp&nbsp&nbsp<span class="hidden-xs">Administrator</span>
             </a>
             <ul class="dropdown-menu">
               <!-- Menu Footer-->
@@ -124,7 +124,7 @@
     <!-- Content Header (Page header) -->
     <section class="content-header">
       <h1>
-        Data Access Point
+        Data Access Point WAN Jakarta Utara
       </h1>
       <ol class="breadcrumb">
         <li><i class="fa fa-dashboard"></i> Home</li>
@@ -152,6 +152,7 @@
                   <th>SN</th>
                   <th>Mac Address</th>
                   <th>Status AP</th>
+                  <th>Location Type</th>
                   <th>Update Terakhir</th>
                   <th>Pilihan</th>
                 </tr>
@@ -165,6 +166,7 @@
                     <td><a data-toggle="modal" data-target="#detailModal<?php echo $row['id'];?>"><?php echo $row['sn'];?></a></td>
                     <td><a data-toggle="modal" data-target="#detailModal<?php echo $row['id'];?>"><?php echo $row['mac_address'];?></a></td>
                     <td><a data-toggle="modal" data-target="#detailModal<?php echo $row['id'];?>"><?php echo $row['status_ap'];?></a></td>
+                    <td><a data-toggle="modal" data-target="#detailModal<?php echo $row['id'];?>"><?php echo $row['location_type'];?></a></td>
                     <td><a data-toggle="modal" data-target="#detailModal<?php echo $row['id'];?>"><?php echo $row['last_update'];?></a></td>
                     <td>
                       <a href="<?php echo base_url('index.php/crud/edit/'.$row['id']);?>">
