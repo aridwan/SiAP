@@ -11,7 +11,11 @@ class Crud extends CI_Controller {
 	}
 
 	public function create(){
-		$this->load->view('create_page');
+		if(isset($_SESSION['username'])){
+			$this->load->view('create_page');
+		} else {
+			$this->load->view('forbidden_page');
+		}
 	}
 
 	public function insert(){
@@ -40,9 +44,13 @@ class Crud extends CI_Controller {
 	}
 
 	public function edit($id){
-		$this->db->where('id',$id);
-		$data = $this->db->get('access_point')->row();
-		$this->load->view('edit_page',$data);
+		if(isset($_SESSION['username'])){
+			$this->db->where('id',$id);
+			$data = $this->db->get('access_point')->row();
+			$this->load->view('edit_page',$data);
+		} else {
+			$this->load->view('forbidden_page');
+		}
 	}
 
 	public function update($id){
@@ -73,6 +81,7 @@ class Crud extends CI_Controller {
 
 	public function delete($id)
 	{
+		
 		$this->db->where('id',$id);
 		$this->db->delete('access_point');
 		redirect('auth/index');

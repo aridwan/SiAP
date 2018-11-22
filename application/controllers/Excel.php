@@ -86,7 +86,11 @@ class Excel extends CI_Controller {
 	}
 
 	public function importPage(){
-		$this->load->view('import_page');
+		if(isset($_SESSION['username'])){
+			$this->load->view('import_page');
+		} else {
+			$this->load->view('forbidden_page');
+		}
 	}
 
 	public function upload(){
