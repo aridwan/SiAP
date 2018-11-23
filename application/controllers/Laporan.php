@@ -17,8 +17,21 @@ class Laporan extends CI_Controller {
 		$dataCisco = $this->db->query('SELECT COUNT(id) FROM access_point WHERE merk="CISCO" AND location_type="Store"',FALSE)->result_array();
 		$this->db->reset_query();
 		$dataHuawei = $this->db->query('SELECT COUNT(id) FROM access_point WHERE merk="HUAWEI" AND location_type="Store"',FALSE)->result_array();
+		$this->db->reset_query();
+		$dataAllInstalled = $this->db->query('SELECT COUNT(id) FROM access_point WHERE location_type="Installed"',FALSE)->result_array();
+		$this->db->reset_query();
+		$dataAllProgress = $this->db->query('SELECT COUNT(id) FROM access_point WHERE location_type="Progress"',FALSE)->result_array();
+		$this->db->reset_query();
+		$dataAllUnknown = $this->db->query('SELECT COUNT(id) FROM access_point WHERE location_type="Unknown"',FALSE)->result_array();
+		$this->db->reset_query();
+		$dataAll = $this->db->query('SELECT COUNT(id) FROM access_point',FALSE)->result_array();
 		$allAPCount['cisco'] = $dataCisco[0]['COUNT(id)'];
 		$allAPCount['huawei'] = $dataHuawei[0]['COUNT(id)'];
+		$allAPCount['allInstalled'] = $dataAllInstalled[0]['COUNT(id)'];
+		$allAPCount['allExisting'] = $dataAll[0]['COUNT(id)'];
+		$allAPCount['allProgress'] = $dataAllProgress[0]['COUNT(id)'];
+		$allAPCount['allUnknown'] = $dataAllUnknown[0]['COUNT(id)'];
+		
 		return $allAPCount;
 	}
 

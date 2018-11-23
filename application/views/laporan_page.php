@@ -123,12 +123,60 @@
     <!-- Content Header (Page header) -->
     <section class="content-header">
       <h1>
-        Data Access Point Gudang Jakarta Utara
+        Data Access Point WAN Jakarta Utara
       </h1>
     </section>
 
     <!-- Main content -->
     <section class="content">
+      <div class="row">
+        <!-- ./col -->
+        <div class="col-lg-4">
+          <!-- small box -->
+          <div class="small-box bg-purple">
+            <div class="inner">
+
+              <h3><?php echo $allApCount['allInstalled'];?>/<?php echo $allApCount['allExisting'];?></h3>
+
+              <p>Terinstall (CISCO dan HUAWEI)</p>
+            </div>
+            <div class="icon">
+              <i class="fa fa-podcast"></i>
+            </div>
+            <div class="small-box-footer">CISCO</div>
+          </div>
+        </div>
+        <div class="col-lg-4">
+          <!-- small box -->
+          <div class="small-box bg-red">
+            <div class="inner">
+
+              <h3><?php echo $allApCount['allProgress'];?>/<?php echo $allApCount['allExisting'];?></h3>
+
+              <p>dalam progress pengadaan (CISCO dan HUAWEI)</p>
+            </div>
+            <div class="icon">
+              <i class="fa fa-podcast"></i>
+            </div>
+            <div class="small-box-footer">CISCO</div>
+          </div>
+        </div>
+        <div class="col-lg-4">
+          <!-- small box -->
+          <div class="small-box bg-gray">
+            <div class="inner">
+
+              <h3><?php echo $allApCount['allUnknown'];?>/<?php echo $allApCount['allExisting'];?></h3>
+
+              <p>Tidak diketahui (CISCO dan HUAWEI)</p>
+            </div>
+            <div class="icon">
+              <i class="fa fa-podcast"></i>
+            </div>
+            <div class="small-box-footer">CISCO</div>
+          </div>
+        </div>
+      </div>
       <div class="row">
         <!-- ./col -->
         <div class="col-lg-6 col-xs-6">
@@ -181,6 +229,13 @@
             <div class="box-body">
               <canvas id="pieChart" style="height:250px"></canvas>
             </div>
+            <div class="box-footer">
+              <span class="badge bg-blue"> Baik </span> = <?php echo $ciscoSummary['baik'];?>
+              <br>
+              <span class="badge bg-red"> Rusak </span> = <?php echo $ciscoSummary['rusak'];?>
+              <br>
+              <span class="badge bg-gray"> Unknown </span> = <?php echo $ciscoSummary['unknown'];?>
+            </div>
               <!-- /.box-body -->
           </div>
           <!-- /.box -->
@@ -202,6 +257,13 @@
             <!-- form start -->
             <div class="box-body">
               <canvas id="pieChart2" style="height:250px"></canvas>
+            </div>
+            <div class="box-footer">
+              <span class="badge bg-blue"> Baik </span> = <?php echo $huaweiSummary['baik'];?>
+              <br>
+              <span class="badge bg-red"> Rusak </span> = <?php echo $huaweiSummary['rusak'];?>
+              <br>
+              <span class="badge bg-gray"> Unknown </span> = <?php echo $huaweiSummary['unknown'];?>
             </div>
               <!-- /.box-body -->
           </div>
