@@ -157,7 +157,10 @@ class Excel extends CI_Controller {
 				$last_id++;
         	}
         	// print_r($data_batch);
-        	$this->db->insert_batch('access_point',$data_batch);
+        	
+        	$ex = $this->db->insert_batch('access_point',$data_batch);
+        	
+        	// print_r($ex);
         	redirect('auth');
         }
 	}

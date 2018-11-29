@@ -133,6 +133,11 @@
 
     <!-- Main content -->
     <section class="content">
+      <?php if(isset($error)){?>
+        <div class="alert alert-danger" role="alert">
+          <?php echo $error;?>
+        </div>
+      <?php }?>
       <div class="row">
         <div class="col-lg-12">
           
@@ -176,7 +181,7 @@
                     <div class="form-group">
                       <label for="inputEmail3" class="col-sm-3 control-label">Serial Number</label>
                       <div class="col-sm-9">
-                        <input type="text" class="form-control" id="serial-number" name="serial_number" value="<?php echo $sn;?>">
+                        <input type="text" class="form-control" id="serial-number" name="serial_number" required="required" value="<?php echo $sn;?>">
                       </div>
                     </div>
                   </div>
