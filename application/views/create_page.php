@@ -148,7 +148,10 @@
                     <div class="form-group">
                       <label for="inputEmail3" class="col-sm-3 control-label">Merk</label>
                       <div class="col-sm-9">
-                        <input type="text" class="form-control" id="merk" name="merk" >
+                        <select class="form-control" name="merk">
+                          <option value="CISCO">CISCO</option>
+                          <option value="HUAWEI">HUAWEI</option>
+                        </select>
                       </div>
                     </div>
                   </div>
@@ -184,7 +187,11 @@
                     <div class="form-group">
                       <label for="inputEmail3" class="col-sm-3 control-label">Status AP</label>
                       <div class="col-sm-9">
-                        <input type="text" class="form-control" id="status-ap" name="status_ap" >
+                        <select class="form-control" name="status_ap">
+                          <option value="Unknown">Unknown</option>
+                          <option value="Baik">Baik</option>
+                          <option value="Rusak">Rusak</option>
+                        </select>
                       </div>
                     </div>
                   </div>
@@ -202,7 +209,11 @@
                     <div class="form-group">
                       <label for="inputEmail3" class="col-sm-3 control-label">Location type</label>
                       <div class="col-sm-9">
-                        <input type="text" class="form-control" id="status-ap" name="location_type" >
+                        <select class="form-control" name="location_type">
+                          <option value="Unknown">Unknown</option>
+                          <option value="Store">Store</option>
+                          <option value="Installed">Installed</option>
+                        </select>
                       </div>
                     </div>
                   </div>
@@ -326,8 +337,7 @@
     <div class="pull-right hidden-xs">
       <b>Version</b> 2.4.0
     </div>
-    <strong>Copyright &copy; 2014-2016 <a href="https://adminlte.io">Almsaeed Studio</a>.</strong> All rights
-    reserved.
+    <strong>Copyright &copy; 2018 <a href="https://telkom.co.id">Telkom Indonesia</a>.</strong> (M. Arief Ridwan 940393)
   </footer>
 
   <!-- Control Sidebar -->

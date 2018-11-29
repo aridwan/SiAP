@@ -143,7 +143,7 @@
             <div class="icon">
               <i class="fa fa-podcast"></i>
             </div>
-            <div class="small-box-footer">CISCO</div>
+            <div class="small-box-footer">CISCO dan HUAWEI</div>
           </div>
         </div>
         <div class="col-lg-4">
@@ -158,7 +158,7 @@
             <div class="icon">
               <i class="fa fa-podcast"></i>
             </div>
-            <div class="small-box-footer">CISCO</div>
+            <div class="small-box-footer">CISCO dan HUAWEI</div>
           </div>
         </div>
         <div class="col-lg-4">
@@ -173,7 +173,7 @@
             <div class="icon">
               <i class="fa fa-podcast"></i>
             </div>
-            <div class="small-box-footer">CISCO</div>
+            <div class="small-box-footer">CISCO dan HUAWEI</div>
           </div>
         </div>
       </div>
@@ -282,8 +282,7 @@
     <div class="pull-right hidden-xs">
       <b>Version</b> 2.4.0
     </div>
-    <strong>Copyright &copy; 2014-2016 <a href="https://adminlte.io">Almsaeed Studio</a>.</strong> All rights
-    reserved.
+    <strong>Copyright &copy; 2018 <a href="https://telkom.co.id">Telkom Indonesia</a>.</strong> (M. Arief Ridwan 940393)
   </footer>
 
   <!-- Control Sidebar -->

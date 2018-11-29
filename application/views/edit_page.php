@@ -148,7 +148,17 @@
                     <div class="form-group">
                       <label for="inputEmail3" class="col-sm-3 control-label">Merk</label>
                       <div class="col-sm-9">
-                        <input type="text" class="form-control" id="merk" name="merk" value="<?php echo $merk;?>">
+                        <select class="form-control" name="merk">
+                          <option value="CISCO" 
+                          <?php if($merk=="CISCO"){
+                            echo 'selected=""';
+                          }?>
+                          >CISCO</option>
+                          <option value="HUAWEI"
+                          <?php if($merk=="HUAWEI"){
+                            echo 'selected=""';
+                          }?>>HUAWEI</option>
+                        </select>
                       </div>
                     </div>
                   </div>
@@ -184,7 +194,23 @@
                     <div class="form-group">
                       <label for="inputEmail3" class="col-sm-3 control-label">Status AP</label>
                       <div class="col-sm-9">
-                        <input type="text" class="form-control" id="status-ap" name="status_ap" value="<?php echo $status_ap;?>">
+                        <select class="form-control" name="status_ap">                          
+                          <option value="Unknown"
+                          <?php if($status_ap=="Unknown"){
+                            echo 'selected=""';
+                          }?>
+                          >Unknown</option>
+                          <option value="Baik"
+                          <?php if($status_ap=="Baik"){
+                            echo 'selected=""';
+                          }?>
+                          >Baik</option>
+                          <option value="Rusak"
+                          <?php if($status_ap=="Rusak"){
+                            echo 'selected=""';
+                          }?>
+                          >Rusak</option>
+                        </select>
                       </div>
                     </div>
                   </div>
@@ -202,7 +228,28 @@
                     <div class="form-group">
                       <label for="inputEmail3" class="col-sm-3 control-label">Location type</label>
                       <div class="col-sm-9">
-                        <input type="text" class="form-control" id="status-ap" name="location_type" value="<?php echo $location_type;?>">
+                        <select class="form-control" name="location_type">                          
+                          <option value="Unknown"
+                          <?php if($location_type=="Unknown"){
+                            echo 'selected=""';
+                          }?>
+                          >Unknown</option>
+                          <option value="Store"
+                          <?php if($location_type=="Store"){
+                            echo 'selected=""';
+                          }?>
+                          >Store</option>
+                          <option value="Installed"
+                          <?php if($location_type=="Installed"){
+                            echo 'selected=""';
+                          }?>
+                          >Installed</option>
+                          <option value="Progress"
+                          <?php if($location_type=="Progress"){
+                            echo 'selected=""';
+                          }?>
+                          >Progress</option>
+                        </select>
                       </div>
                     </div>
                   </div>
@@ -326,8 +373,7 @@
     <div class="pull-right hidden-xs">
       <b>Version</b> 2.4.0
     </div>
-    <strong>Copyright &copy; 2014-2016 <a href="https://adminlte.io">Almsaeed Studio</a>.</strong> All rights
-    reserved.
+    <strong>Copyright &copy; 2018 <a href="https://telkom.co.id">Telkom Indonesia</a>.</strong> (M. Arief Ridwan 940393)
   </footer>
 
   <!-- Control Sidebar -->
