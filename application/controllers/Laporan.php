@@ -10,6 +10,34 @@ class Laporan extends CI_Controller {
 		$data['allApCount'] = $this->getAPCount();
 		$data['ciscoSummary'] = $this->getSummaryCisco();
 		$data['huaweiSummary'] = $this->getSummaryHuawei();
+		$allAP = $this->db->query("SELECT * from access_point where location_type='Store'")->result_array();
+		$data['Cisco1'] = 0;
+		$data['Cisco2'] = 0;
+		$data['Cisco3'] = 0;
+		$data['Cisco4'] = 0;
+		$data['Cisco5'] = 0;
+		$data['Huawei1'] = 0;
+		$data['Huawei2'] = 0;
+		$data['null'] = 0;
+		foreach ($allAP as $row) {
+			if ($row['type'] == "AIR-AP1832I-F-K9"){
+				$data['Cisco1']++;
+			} else if ($row['type'] == "AIR-CAP3502I-C-K9") {
+				$data['Cisco2']++;
+			} else if ($row['type'] == "AIR-CAP1602I-C-K9") {
+				$data['Cisco3']++;
+			} else if ($row['type'] == "AIR-CAP3502E-C-K9") {
+				$data['Cisco4']++;
+			} else if ($row['type'] == "AIR-CAP1602E-C-K9") {
+				$data['Cisco5']++;
+			} else if ($row['type'] == "WA201DK-NE") {
+				$data['Huawei1']++;
+			} else if ($row['type'] == "WA251DT-NE") {
+				$data['Huawei2']++;
+			} else {
+				$data['null']++;
+			}
+		}
 		$this->load->view('laporan_page',$data);
 	}
 
@@ -62,4 +90,5 @@ class Laporan extends CI_Controller {
 
 		return $data;	
 	}
+
 }

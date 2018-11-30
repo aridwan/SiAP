@@ -306,6 +306,8 @@
               <!-- /.box-body -->
               <div class="box-footer">
                 <button type="submit" class="btn btn-success pull-right" data-target="#myModal">Simpan</button>
+                <div class="pull-right">&nbsp&nbsp&nbsp</div>
+                <a href="<?php echo base_url();?>"><button type="button" class="btn btn-default pull-right">Batal</button></a>
               </div>
               <!-- /.box-footer -->
 
