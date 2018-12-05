@@ -58,15 +58,15 @@ class Excel extends CI_Controller {
 			$sheet->setCellValue('D'.$z,$accessPoints[$i-1]['sn']);
 			$sheet->setCellValue('E'.$z,$accessPoints[$i-1]['mac_address']);			
 			$sheet->setCellValue('F'.$z,$accessPoints[$i-1]['status_ap']);
-			$sheet->setCellValue('G'.$z,$accessPoints[$i-1]['paket_ap']);
+			$sheet->setCellValue('G'.$z,$accessPoints[$i-1]['site_id']);
 			$sheet->setCellValue('H'.$z,$accessPoints[$i-1]['location_type']);
 			$sheet->setCellValue('I'.$z,$accessPoints[$i-1]['customer']);
 			$sheet->setCellValue('J'.$z,$accessPoints[$i-1]['alamat']);
 			$sheet->setCellValue('K'.$z,$accessPoints[$i-1]['skema_bisnis']);
 			$sheet->setCellValue('L'.$z,$accessPoints[$i-1]['ssid']);
-			$sheet->setCellValue('M'.$z,$accessPoints[$i-1]['posisi_ap']);
-			$sheet->setCellValue('N'.$z,$accessPoints[$i-1]['tahun_aktif']);
-			$sheet->setCellValue('O'.$z,$accessPoints[$i-1]['bulan_aktif']);
+			$sheet->setCellValue('M'.$z,$accessPoints[$i-1]['keterangan']);
+			$sheet->setCellValue('N'.$z,$accessPoints[$i-1]['tanggal_aktif']);
+			$sheet->setCellValue('O'.$z,$accessPoints[$i-1]['no_order']);
 			$sheet->setCellValue('P'.$z,$accessPoints[$i-1]['sto']);
 			$sheet->setCellValue('Q'.$z,$accessPoints[$i-1]['no_inet']);
 			$sheet->setCellValue('R'.$z,$accessPoints[$i-1]['last_update']);
@@ -142,15 +142,15 @@ class Excel extends CI_Controller {
 							'sn' => $sheetData[$i][3],
 							'mac_address' => $sheetData[$i][4],
 							'status_ap' => $sheetData[$i][5],
-							'paket_ap' => $sheetData[$i][6],
+							'site_id' => $sheetData[$i][6],
 							'location_type' => $sheetData[$i][7],
 							'customer' => $sheetData[$i][8],
 							'alamat' => $sheetData[$i][9],
 							'skema_bisnis' => $sheetData[$i][10],
 							'ssid' => $sheetData[$i][11],
-							'posisi_ap' => $sheetData[$i][12],
-							'tahun_aktif' => $sheetData[$i][13],
-							'bulan_aktif' => $sheetData[$i][14],
+							'keterangan' => $sheetData[$i][12],
+							'tanggal_aktif' => $sheetData[$i][13],
+							'no_order' => $sheetData[$i][14],
 							'sto' => $sheetData[$i][15],
 							'no_inet' => $sheetData[$i][16],
 						);

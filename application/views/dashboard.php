@@ -65,7 +65,7 @@
           <!-- User Account: style can be found in dropdown.less -->
           <li class="dropdown user user-menu">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-              <img src="<?php echo base_url('telkom2.png');?>">&nbsp&nbsp&nbsp&nbsp<span class="hidden-xs">Administrator</span>
+              <img src="<?php echo base_url('telkom2.png');?>">&nbsp&nbsp&nbsp&nbsp<span class="hidden-xs"><?php echo $_SESSION['username']['nama'];?></span>
             </a>
             <ul class="dropdown-menu">
               <!-- Menu Footer-->
@@ -243,7 +243,7 @@
                                 <label for="inputEmail3" class="col-sm-3 control-label">Paket AP</label>
                               </div>
                               <div class="col-md-3">
-                                <?php echo $row['paket_ap'];?>
+                                <?php echo $row['site_id'];?>
                               </div>
                             </div>
                             <div class="row">
@@ -285,7 +285,7 @@
                                 <label for="inputEmail3" class="col-sm-3 control-label">Posisi AP</label>
                               </div>
                               <div class="col-md-3">
-                                <?php echo $row['posisi_ap'];?>
+                                <?php echo $row['keterangan'];?>
                               </div>
                             </div>
                             <div class="row">
@@ -293,13 +293,13 @@
                                 <label for="inputEmail3" class="col-sm-3 control-label">Tahun Aktif</label>
                               </div>
                               <div class="col-md-3">
-                                <?php echo $row['tahun_aktif'];?>
+                                <?php echo $row['tanggal_aktif'];?>
                               </div>
                               <div class="col-md-3">
                                 <label for="inputEmail3" class="col-sm-3 control-label">Bulan Aktif</label>
                               </div>
                               <div class="col-md-3">
-                                <?php echo $row['bulan_aktif'];?>
+                                <?php echo $row['no_order'];?>
                               </div>
                             </div>
                             <div class="row">

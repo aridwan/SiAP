@@ -20,19 +20,19 @@ class Laporan extends CI_Controller {
 		$data['Huawei2'] = 0;
 		$data['null'] = 0;
 		foreach ($allAP as $row) {
-			if ($row['type'] == "AIR-AP1832I-F-K9"){
+			if ($row['type'] == "AIR-AP1832I-F-K9" && $row['status_ap'] == "Baik"){
 				$data['Cisco1']++;
-			} else if ($row['type'] == "AIR-CAP3502I-C-K9") {
+			} else if ($row['type'] == "AIR-CAP3502I-C-K9" && $row['status_ap'] == "Baik") {
 				$data['Cisco2']++;
-			} else if ($row['type'] == "AIR-CAP1602I-C-K9") {
+			} else if ($row['type'] == "AIR-CAP1602I-C-K9" && $row['status_ap'] == "Baik") {
 				$data['Cisco3']++;
-			} else if ($row['type'] == "AIR-CAP3502E-C-K9") {
+			} else if ($row['type'] == "AIR-CAP3502E-C-K9" && $row['status_ap'] == "Baik") {
 				$data['Cisco4']++;
-			} else if ($row['type'] == "AIR-CAP1602E-C-K9") {
+			} else if ($row['type'] == "AIR-CAP1602E-C-K9" && $row['status_ap'] == "Baik") {
 				$data['Cisco5']++;
-			} else if ($row['type'] == "WA201DK-NE") {
+			} else if ($row['type'] == "WA201DK-NE" && $row['status_ap'] == "Baik") {
 				$data['Huawei1']++;
-			} else if ($row['type'] == "WA251DT-NE") {
+			} else if ($row['type'] == "WA251DT-NE" && $row['status_ap'] == "Baik") {
 				$data['Huawei2']++;
 			} else {
 				$data['null']++;

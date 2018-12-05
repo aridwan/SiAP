@@ -32,15 +32,15 @@ class Crud extends CI_Controller {
 						'sn' => $_POST['serial_number'],
 						'mac_address' => $_POST['mac_address'],
 						'status_ap' => $_POST['status_ap'],
-						'paket_ap' => $_POST['paket_ap'],
+						'site_id' => $_POST['site_id'],
 						'location_type' => $_POST['location_type'],
 						'customer' => $_POST['customer'],
 						'alamat' => $_POST['alamat'],
 						'skema_bisnis' => $_POST['skema_bisnis'],
 						'ssid' => $_POST['ssid'],
-						'posisi_ap' => $_POST['posisi_ap'],
-						'tahun_aktif' => $_POST['tahun_aktif'],
-						'bulan_aktif' => $_POST['bulan_aktif'],
+						'keterangan' => $_POST['keterangan'],
+						'tanggal_aktif' => $_POST['tanggal_aktif'],
+						'no_order' => $_POST['no_order'],
 						'sto' => $_POST['sto'],
 						'no_inet' => $_POST['no_inet'],
 					);
@@ -60,14 +60,6 @@ class Crud extends CI_Controller {
 	}
 
 	public function update($id){
-		$count_sn = count($this->db->query('SELECT * FROM access_point WHERE sn="'.$_POST['serial_number'].'"')->result_array());
-		if ($count_sn > 0){
-			$this->db->reset_query();
-			$this->db->where('id',$id);
-			$data = $this->db->get('access_point')->row_array();
-			$data['error'] = "Serial number sudah digunakan.";
-			$this->load->view('edit_page',$data);
-		} else {
 			$this->db->where('id',$id);
 			$timestamps = new DateTime();
 			$data = array(
@@ -76,22 +68,21 @@ class Crud extends CI_Controller {
 						'sn' => $_POST['serial_number'],
 						'mac_address' => $_POST['mac_address'],
 						'status_ap' => $_POST['status_ap'],
-						'paket_ap' => $_POST['paket_ap'],
+						'site_id' => $_POST['site_id'],
 						'location_type' => $_POST['location_type'],
 						'customer' => $_POST['customer'],
 						'alamat' => $_POST['alamat'],
 						'skema_bisnis' => $_POST['skema_bisnis'],
 						'ssid' => $_POST['ssid'],
-						'posisi_ap' => $_POST['posisi_ap'],
-						'tahun_aktif' => $_POST['tahun_aktif'],
-						'bulan_aktif' => $_POST['bulan_aktif'],
+						'keterangan' => $_POST['keterangan'],
+						'tanggal_aktif' => $_POST['tanggal_aktif'],
+						'no_order' => $_POST['no_order'],
 						'sto' => $_POST['sto'],
 						'no_inet' => $_POST['no_inet'],
 						'last_update' => $timestamps->format('d-m-Y H:i:s')
 					);
 			$this->db->update('access_point',$data);
 			redirect('auth/index');
-		}
 	}
 
 	public function delete($id)

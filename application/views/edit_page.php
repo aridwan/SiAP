@@ -65,7 +65,7 @@
           <!-- User Account: style can be found in dropdown.less -->
           <li class="dropdown user user-menu">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-              <img src="../../../telkom2.png">&nbsp&nbsp&nbsp&nbsp<span class="hidden-xs">Administrator</span>
+              <img src="../../../telkom2.png">&nbsp&nbsp&nbsp&nbsp<span class="hidden-xs"><?php echo $_SESSION['username']['nama'];?></span>
             </a>
             <ul class="dropdown-menu">
               <!-- Menu Footer-->
@@ -221,9 +221,9 @@
                   </div>
                   <div class="col-md-6">
                     <div class="form-group">
-                      <label for="inputEmail3" class="col-sm-3 control-label">Paket AP</label>
+                      <label for="inputEmail3" class="col-sm-3 control-label">Site ID</label>
                       <div class="col-sm-9">
-                        <input type="text" class="form-control" id="drop-from" name="paket_ap" value="<?php echo $paket_ap;?>">
+                        <input type="text" class="form-control" id="drop-from" name="site_id" value="<?php echo $site_id;?>">
                       </div>
                     </div>
                   </div>
@@ -280,7 +280,13 @@
                     <div class="form-group">
                       <label for="inputEmail3" class="col-sm-3 control-label">Skema Bisnis</label>
                       <div class="col-sm-9">
-                        <input type="text" class="form-control" id="alamat" name="skema_bisnis" value="<?php echo $skema_bisnis;?>">
+                        <select class="form-control" name="skema_bisnis">
+                          <option value="WMS">WMS</option>
+                          <option value="Wico">Wico</option>
+                          <option value="Wico 2.0">Wico 2.0</option>
+                          <option value="Basic">Basic</option>
+                          <option value="Wista">Wista</option>
+                        </select>
                       </div>
                     </div>
                   </div>
@@ -296,9 +302,9 @@
                   </div>
                   <div class="col-md-6">
                     <div class="form-group">
-                      <label for="inputEmail3" class="col-sm-3 control-label">Posisi AP</label>
+                      <label for="inputEmail3" class="col-sm-3 control-label">Keterangan  </label>
                       <div class="col-sm-9">
-                        <input type="text" class="form-control" id="ssi" name="posisi_ap" value="<?php echo $posisi_ap;?>">
+                        <input type="text" class="form-control" id="ssi" name="keterangan" value="<?php echo $keterangan;?>">
                       </div>
                     </div>
                   </div>
@@ -306,17 +312,17 @@
                 <div class="row">
                   <div class="col-md-6">
                     <div class="form-group">
-                      <label for="inputEmail3" class="col-sm-3 control-label">Tahun Aktif</label>
+                      <label for="inputEmail3" class="col-sm-3 control-label">Tanggal Aktif</label>
                       <div class="col-sm-9">
-                        <input type="text" class="form-control" id="posisi-ap" name="tahun_aktif" value="<?php echo $tahun_aktif;?>">
+                        <input type="text" class="form-control" id="posisi-ap" name="tanggal_aktif" value="<?php echo $tanggal_aktif;?>">
                       </div>
                     </div>
                   </div>
                   <div class="col-md-6">
                     <div class="form-group">
-                      <label for="inputEmail3" class="col-sm-3 control-label">Bulan Aktif</label>
+                      <label for="inputEmail3" class="col-sm-3 control-label">No Order</label>
                       <div class="col-sm-9">
-                        <input type="text" class="form-control" id="tahun-aktif" name="bulan_aktif" value="<?php echo $bulan_aktif;?>">
+                        <input type="text" class="form-control" id="tahun-aktif" name="no_order" value="<?php echo $no_order;?>">
                       </div>
                     </div>
                   </div>
@@ -333,6 +339,28 @@
                   <div class="col-md-6">
                     <div class="form-group">
                       <label for="inputEmail3" class="col-sm-3 control-label">No Inet</label>
+                      <div class="col-sm-9">
+                        <input type="text" class="form-control" id="sto" name="no_inet" value="<?php echo $no_inet;?>">
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                 <div class="row">
+                  <div class="col-md-6">
+                    <div class="form-group">
+                      <label for="inputEmail3" class="col-sm-3 control-label">LME</label>
+                      <div class="col-sm-9">
+                        <select class="form-control" name="lme">
+                          <option value="pt1">PT1</option>                          
+                          <option value="pt2">PT2</option>
+                          <option value="pt3">PT3</option>                          
+                        </select>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-6">
+                    <div class="form-group">
+                      <label for="inputEmail3" class="col-sm-3 control-label">Investasi</label>
                       <div class="col-sm-9">
                         <input type="text" class="form-control" id="sto" name="no_inet" value="<?php echo $no_inet;?>">
                       </div>
