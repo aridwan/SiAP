@@ -101,6 +101,11 @@
             <i class="fa fa-book"></i> <span>Laporan</span>
           </a>
         </li>
+        <li>
+          <a href="<?php echo base_url('index.php/laporan/investasi');?>">
+            <i class="fa fa-money"></i> <span>Laporan Investasi</span>
+          </a>
+        </li>
         <li class="treeview">
           <a href="#">
             <i class="fa fa-edit"></i> <span>Data</span>
@@ -244,6 +249,11 @@
                             echo 'selected=""';
                           }?>
                           >Store</option>
+                          <option value="Carried by Technician"
+                          <?php if($location_type=="Carried by Technician"){
+                            echo 'selected=""';
+                          }?>
+                          >Progress</option>
                           <option value="Installed"
                           <?php if($location_type=="Installed"){
                             echo 'selected=""';
@@ -254,6 +264,7 @@
                             echo 'selected=""';
                           }?>
                           >Progress</option>
+
                         </select>
                       </div>
                     </div>
@@ -281,11 +292,31 @@
                       <label for="inputEmail3" class="col-sm-3 control-label">Skema Bisnis</label>
                       <div class="col-sm-9">
                         <select class="form-control" name="skema_bisnis">
-                          <option value="WMS">WMS</option>
-                          <option value="Wico">Wico</option>
-                          <option value="Wico 2.0">Wico 2.0</option>
-                          <option value="Basic">Basic</option>
-                          <option value="Wista">Wista</option>
+                          <option value="WMS"
+                          <?php if($skema_bisnis=="WMS"){
+                            echo 'selected=""';
+                          }?>
+                          >WMS</option>
+                          <option value="Wico"
+                          <?php if($skema_bisnis=="Wico"){
+                            echo 'selected=""';
+                          }?>
+                          >Wico</option>
+                          <option value="Wico 2.0"
+                          <?php if($skema_bisnis=="Wico 2.0"){
+                            echo 'selected=""';
+                          }?>
+                          >Wico 2.0</option>
+                          <option value="Basic"
+                          <?php if($skema_bisnis=="Basic"){
+                            echo 'selected=""';
+                          }?>
+                          >Basic</option>
+                          <option value="Wista"
+                          <?php if($skema_bisnis=="Wista"){
+                            echo 'selected=""';
+                          }?>
+                          >Wista</option>
                         </select>
                       </div>
                     </div>
@@ -351,9 +382,21 @@
                       <label for="inputEmail3" class="col-sm-3 control-label">LME</label>
                       <div class="col-sm-9">
                         <select class="form-control" name="lme">
-                          <option value="pt1">PT1</option>                          
-                          <option value="pt2">PT2</option>
-                          <option value="pt3">PT3</option>                          
+                          <option value="pt1"
+                          <?php if($lme=="pt1"){
+                            echo 'selected=""';
+                          }?>
+                          >PT1</option>                          
+                          <option value="pt2"
+                          <?php if($lme=="pt2"){
+                            echo 'selected=""';
+                          }?>
+                          >PT2</option>
+                          <option value="pt3"
+                          <?php if($lme=="pt3"){
+                            echo 'selected=""';
+                          }?>
+                          >PT3</option>                          
                         </select>
                       </div>
                     </div>
@@ -362,7 +405,7 @@
                     <div class="form-group">
                       <label for="inputEmail3" class="col-sm-3 control-label">Investasi</label>
                       <div class="col-sm-9">
-                        <input type="text" class="form-control" id="sto" name="no_inet" value="<?php echo $no_inet;?>">
+                        <input type="number" class="form-control" id="sto" name="investasi" value="<?php echo $investasi;?>">
                       </div>
                     </div>
                   </div>

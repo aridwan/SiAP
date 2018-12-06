@@ -8,15 +8,15 @@ class Auth extends CI_Controller {
 
 	public function index(){
 		if (isset($_SESSION['username'])){
-		if ($_SESSION['username'] == 'admin'){
-			// $this->session->set_userdata(array('username'=>$username));
-			$query = $this->db->query('SELECT * FROM access_point');
-			$data['hasil'] = $query->result_array();
-			$this->load->view('dashboard',$data);
-		} else {
-			$data['error'] = 'Invalid Account';
-			$this->load->view('login_page',$data);
-		}
+			// if ($_SESSION['username'] == 'admin'){
+				// $this->session->set_userdata(array('username'=>$username));
+				$query = $this->db->query('SELECT * FROM access_point');
+				$data['hasil'] = $query->result_array();
+				$this->load->view('dashboard',$data);
+			// } else {
+			// 	$data['error'] = 'Invalid Account';
+			// 	$this->load->view('login_page',$data);
+			// }
 		}
 		else {
 			$this->load->view('login_page');

@@ -101,6 +101,11 @@
             <i class="fa fa-book"></i> <span>Laporan</span>
           </a>
         </li>
+        <li>
+          <a href="<?php echo base_url('index.php/laporan/investasi');?>">
+            <i class="fa fa-money"></i> <span>Laporan Investasi</span>
+          </a>
+        </li>
         <li class="treeview">
           <a href="#">
             <i class="fa fa-edit"></i> <span>Data</span>
@@ -154,13 +159,16 @@
                   <th>Status AP</th>
                   <th>Location Type</th>
                   <th>Update Terakhir</th>
+                  <th>Update Terakhir Oleh</th>
                   <th>Pilihan</th>
                 </tr>
                 </thead>
                 <tbody>
-                  <?php foreach ($hasil as $row){?>
+                  <?php 
+                  $count = 1;
+                  foreach ($hasil as $row){?>
                   <tr>
-                    <td><a data-toggle="modal" data-target="#detailModal<?php echo $row['id'];?>"><?php echo $row['id'];?></a></td>
+                    <td><a data-toggle="modal" data-target="#detailModal<?php echo $row['id'];?>"><?php echo $count;?></a></td>
                     <td><a data-toggle="modal" data-target="#detailModal<?php echo $row['id'];?>"><?php echo $row['merk'];?></a></td>
                     <td><a data-toggle="modal" data-target="#detailModal<?php echo $row['id'];?>"><?php echo $row['type'];?></a></td>
                     <td><a data-toggle="modal" data-target="#detailModal<?php echo $row['id'];?>"><?php echo $row['sn'];?></a></td>
@@ -168,6 +176,7 @@
                     <td><a data-toggle="modal" data-target="#detailModal<?php echo $row['id'];?>"><?php echo $row['status_ap'];?></a></td>
                     <td><a data-toggle="modal" data-target="#detailModal<?php echo $row['id'];?>"><?php echo $row['location_type'];?></a></td>
                     <td><a data-toggle="modal" data-target="#detailModal<?php echo $row['id'];?>"><?php echo $row['last_update'];?></a></td>
+                    <td><a data-toggle="modal" data-target="#detailModal<?php echo $row['id'];?>"><?php echo $row['last_update_by'];?></a></td>
                     <td>
                       <a href="<?php echo base_url('index.php/crud/edit/'.$row['id']);?>">
                         <button type="button" class="btn btn-primary btn-sm">Ubah</button>
@@ -316,14 +325,36 @@
                                 <?php echo $row['no_inet'];?>
                               </div>
                             </div>
+                            <div class="row">
+                              <div class="col-md-3">
+                                <label for="inputEmail3" class="col-sm-3 control-label">LME</label>
+                              </div>
+                              <div class="col-md-3">
+                                <?php echo $row['lme'];?>
+                              </div>
+                              <div class="col-md-3">
+                                <label for="inputEmail3" class="col-sm-3 control-label">Investasi</label>
+                              </div>
+                              <div class="col-md-3">
+                                <?php echo $row['investasi'];?>
+                              </div>
+                            </div>
+                            <div class="row">
+                              <div class="col-md-3">
+                                <label for="inputEmail3" class="col-sm-3 control-label">Last Update By</label>
+                              </div>
+                              <div class="col-md-3">
+                                <?php echo $row['last_update_by'];?>
+                              </div>
+                            </div>
                           </div>
+
                           <div class="modal-footer">
                             
                           </div>
                         </div>
                       </div>
                     </div>
-                    <!--  -->
                     <div class="modal fade" id="detailModal<?php echo $row['id'];?>" tabindex="-1" role="dialog" aria-labelledby="detailModalLabel">
                       <div class="modal-dialog" role="document">
                         <div class="modal-content">
@@ -340,7 +371,9 @@
 
                     </td>
                   </tr>
-                <?php }?>
+                <?php 
+                  $count++;
+                }?>
                 </tbody>
                 
               </table>

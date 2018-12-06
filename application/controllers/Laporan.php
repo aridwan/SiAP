@@ -10,7 +10,7 @@ class Laporan extends CI_Controller {
 		$data['allApCount'] = $this->getAPCount();
 		$data['ciscoSummary'] = $this->getSummaryCisco();
 		$data['huaweiSummary'] = $this->getSummaryHuawei();
-		$allAP = $this->db->query("SELECT * from access_point where location_type='Store'")->result_array();
+		$allAP = $this->db->query("SELECT * from access_point where location_type='Store' and status_ap='Baik'")->result_array();
 		$data['Cisco1'] = 0;
 		$data['Cisco2'] = 0;
 		$data['Cisco3'] = 0;
@@ -20,19 +20,19 @@ class Laporan extends CI_Controller {
 		$data['Huawei2'] = 0;
 		$data['null'] = 0;
 		foreach ($allAP as $row) {
-			if ($row['type'] == "AIR-AP1832I-F-K9" && $row['status_ap'] == "Baik"){
+			if ($row['type'] == "AIR-AP1832I-F-K9"){
 				$data['Cisco1']++;
-			} else if ($row['type'] == "AIR-CAP3502I-C-K9" && $row['status_ap'] == "Baik") {
+			} else if ($row['type'] == "AIR-CAP3502I-C-K9"){
 				$data['Cisco2']++;
-			} else if ($row['type'] == "AIR-CAP1602I-C-K9" && $row['status_ap'] == "Baik") {
+			} else if ($row['type'] == "AIR-CAP1602I-C-K9"){
 				$data['Cisco3']++;
-			} else if ($row['type'] == "AIR-CAP3502E-C-K9" && $row['status_ap'] == "Baik") {
+			} else if ($row['type'] == "AIR-CAP3502E-C-K9"){
 				$data['Cisco4']++;
-			} else if ($row['type'] == "AIR-CAP1602E-C-K9" && $row['status_ap'] == "Baik") {
+			} else if ($row['type'] == "AIR-CAP1602E-C-K9"){
 				$data['Cisco5']++;
-			} else if ($row['type'] == "WA201DK-NE" && $row['status_ap'] == "Baik") {
+			} else if ($row['type'] == "WA201DK-NE"){
 				$data['Huawei1']++;
-			} else if ($row['type'] == "WA251DT-NE" && $row['status_ap'] == "Baik") {
+			} else if ($row['type'] == "WA251DT-NE"){
 				$data['Huawei2']++;
 			} else {
 				$data['null']++;
@@ -89,6 +89,26 @@ class Laporan extends CI_Controller {
 		$data['unknown'] = $dataUnknown[0]['COUNT(id)'];
 
 		return $data;	
+	}
+
+	public function investasi(){
+		$data = $this->db->get('access_point')->result_array();
+		$hasil['pt1'] = 0;
+		$hasil['pt2'] = 0;
+		$hasil['pt3'] = 0;
+		$hasil['pt4'] = 0;
+		foreach ($data as $row) {
+			if($row['lme'] == 'pt1'){
+				$hasil['pt1'] += intval($row['investasi']);
+			}
+			else if($row['lme'] == 'pt2'){
+				$hasil['pt2'] += intval($row['investasi']);
+			}
+			else{
+				$hasil['pt3'] += intval($row['investasi']);
+			}
+		}
+		$this->load->view('laporan_investasi_page',$hasil);
 	}
 
 }

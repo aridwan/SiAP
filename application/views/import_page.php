@@ -101,6 +101,11 @@
             <i class="fa fa-book"></i> <span>Laporan</span>
           </a>
         </li>
+        <li>
+          <a href="<?php echo base_url('index.php/laporan/investasi');?>">
+            <i class="fa fa-money"></i> <span>Laporan Investasi</span>
+          </a>
+        </li>
         <li class="treeview">
           <a href="#">
             <i class="fa fa-edit"></i> <span>Data</span>

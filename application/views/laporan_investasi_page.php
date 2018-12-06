@@ -128,98 +128,17 @@
     <!-- Content Header (Page header) -->
     <section class="content-header">
       <h1>
-        Data Access Point WAN Jakarta Utara
+        Laporan Investasi Access Point
       </h1>
     </section>
 
     <!-- Main content -->
     <section class="content">
       <div class="row">
-        <!-- ./col -->
-        <div class="col-lg-4">
-          <!-- small box -->
-          <div class="small-box bg-purple">
-            <div class="inner">
-
-              <h3><?php echo $allApCount['allInstalled'];?>/<?php echo $allApCount['allExisting'];?></h3>
-
-              <p>Terinstall (CISCO dan HUAWEI)</p>
-            </div>
-            <div class="icon">
-              <i class="fa fa-podcast"></i>
-            </div>
-            <div class="small-box-footer">CISCO dan HUAWEI</div>
-          </div>
-        </div>
-        <div class="col-lg-4">
-          <!-- small box -->
-          <div class="small-box bg-red">
-            <div class="inner">
-
-              <h3><?php echo $allApCount['allProgress'];?>/<?php echo $allApCount['allExisting'];?></h3>
-
-              <p>dalam progress pengadaan (CISCO dan HUAWEI)</p>
-            </div>
-            <div class="icon">
-              <i class="fa fa-podcast"></i>
-            </div>
-            <div class="small-box-footer">CISCO dan HUAWEI</div>
-          </div>
-        </div>
-        <div class="col-lg-4">
-          <!-- small box -->
-          <div class="small-box bg-gray">
-            <div class="inner">
-
-              <h3><?php echo $allApCount['allUnknown'];?>/<?php echo $allApCount['allExisting'];?></h3>
-
-              <p>Tidak diketahui (CISCO dan HUAWEI)</p>
-            </div>
-            <div class="icon">
-              <i class="fa fa-podcast"></i>
-            </div>
-            <div class="small-box-footer">CISCO dan HUAWEI</div>
-          </div>
-        </div>
-      </div>
-      <div class="row">
-        <!-- ./col -->
-        <div class="col-lg-6 col-xs-6">
-          <!-- small box -->
-          <div class="small-box bg-green">
-            <div class="inner">
-              <h3><?php echo $allApCount['cisco'];?></h3>
-
-              <p>AP CISCO di Gudang</p>
-            </div>
-            <div class="icon">
-              <i class="fa fa-podcast"></i>
-            </div>
-            <div class="small-box-footer">CISCO</div>
-          </div>
-        </div>
-        <!-- ./col -->
-        <div class="col-lg-6 col-xs-6">
-          <!-- small box -->
-          <div class="small-box bg-yellow">
-            <div class="inner">
-              <h3><?php echo $allApCount['huawei'];?></h3>
-
-              <p>AP HUAWEI di Gudang</p>
-            </div>
-            <div class="icon">
-              <i class="fa fa-podcast"></i>
-            </div>
-            <div class="small-box-footer">HUAWEI</div>
-          </div>
-        </div>
-        <!-- ./col -->
-      </div>
-      <div class="row">
         <div class="col-md-12">
           <div class="box box-info">
             <div class="box-header with-border">
-              <h3 class="box-title">Tipe AP Tersedia di Gudang</h3>
+              <h3 class="box-title">Laporan Investasi</h3>
                 <div class="box-tools pull-right">
                   <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>
                   </button>
@@ -234,70 +153,6 @@
             </div>
         </div>
       </div>
-      <div class="row">
-        <div class="col-lg-6">
-          
-          <!-- /.box -->
-
-          <div class="box box-success">
-            <div class="box-header with-border">
-              <h3 class="box-title">Kondisi AP CISCO</h3>
-
-              <div class="box-tools pull-right">
-                <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>
-                </button>
-                <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
-              </div>
-            </div>
-            <!-- form start -->
-            <div class="box-body">
-              <canvas id="pieChart" style="height:250px"></canvas>
-            </div>
-            <div class="box-footer">
-              <span class="badge bg-blue"> Baik </span> = <?php echo $ciscoSummary['baik'];?>
-              <br>
-              <span class="badge bg-red"> Rusak </span> = <?php echo $ciscoSummary['rusak'];?>
-              <br>
-              <span class="badge bg-gray"> Unknown </span> = <?php echo $ciscoSummary['unknown'];?>
-            </div>
-              <!-- /.box-body -->
-          </div>
-          <!-- /.box -->
-        </div>
-        <div class="col-lg-6">
-          
-          <!-- /.box -->
-
-          <div class="box box-warning">
-            <div class="box-header with-border">
-              <h3 class="box-title">Kondisi AP HUAWEI</h3>
-
-              <div class="box-tools pull-right">
-                <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>
-                </button>
-                <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
-              </div>
-            </div>
-            <!-- form start -->
-            <div class="box-body">
-              <canvas id="pieChart2" style="height:250px"></canvas>
-            </div>
-            <div class="box-footer">
-              <span class="badge bg-blue"> Baik </span> = <?php echo $huaweiSummary['baik'];?>
-              <br>
-              <span class="badge bg-red"> Rusak </span> = <?php echo $huaweiSummary['rusak'];?>
-              <br>
-              <span class="badge bg-gray"> Unknown </span> = <?php echo $huaweiSummary['unknown'];?>
-            </div>
-              <!-- /.box-body -->
-          </div>
-          <!-- /.box -->
-        </div>
-          <!-- /.box -->
-        </div>
-        <!-- /.col -->
-      </div>
-      <!-- /.row -->
     </section>
     <!-- /.content -->
   </div>
@@ -441,107 +296,7 @@
     })
 
 
-    // Pie Chart CISCO
-    var pieChartCanvas = $('#pieChart').get(0).getContext('2d')
-    var pieChart       = new Chart(pieChartCanvas)
-    var PieData        = [
-      {
-        value    : <?php echo $ciscoSummary['rusak'];?>,
-        color    : '#f56954',
-        highlight: '#f56954',
-        label    : 'Rusak'
-      },
-      {
-        value    : <?php echo $ciscoSummary['baik'];?>,
-        color    : '#3c8dbc',
-        highlight: '#3c8dbc',
-        label    : 'Baik'
-      },
-      {
-        value    : <?php echo $ciscoSummary['unknown'];?>,
-        color    : '#d9dce2',
-        highlight: '#d9dce2',
-        label    : 'Unknown'
-      }
-    ]
-    var pieOptions     = {
-      //Boolean - Whether we should show a stroke on each segment
-      segmentShowStroke    : true,
-      //String - The colour of each segment stroke
-      segmentStrokeColor   : '#fff',
-      //Number - The width of each segment stroke
-      segmentStrokeWidth   : 2,
-      //Number - The percentage of the chart that we cut out of the middle
-      percentageInnerCutout: 50, // This is 0 for Pie charts
-      //Number - Amount of animation steps
-      animationSteps       : 100,
-      //String - Animation easing effect
-      animationEasing      : 'easeOutBounce',
-      //Boolean - Whether we animate the rotation of the Doughnut
-      animateRotate        : true,
-      //Boolean - Whether we animate scaling the Doughnut from the centre
-      animateScale         : false,
-      //Boolean - whether to make the chart responsive to window resizing
-      responsive           : true,
-      // Boolean - whether to maintain the starting aspect ratio or not when responsive, if set to false, will take up entire container
-      maintainAspectRatio  : true,
-      //String - A legend template
-      legendTemplate       : '<ul class="<%=name.toLowerCase()%>-legend"><% for (var i=0; i<segments.length; i++){%><li><span style="background-color:<%=segments[i].fillColor%>"></span><%if(segments[i].label){%><%=segments[i].label%><%}%></li><%}%></ul>'
-    }
-    //Create pie or douhnut chart
-    // You can switch between pie and douhnut using the method below.
-    pieChart.Doughnut(PieData, pieOptions)
-
-    // Pie Chart HUAWEI
-    var pieChartCanvas = $('#pieChart2').get(0).getContext('2d')
-    var pieChart       = new Chart(pieChartCanvas)
-    var PieData        = [
-      {
-        value    : <?php echo $huaweiSummary['rusak'];?>,
-        color    : '#f56954',
-        highlight: '#f56954',
-        label    : 'Rusak'
-      },
-      {
-        value    : <?php echo $huaweiSummary['baik'];?>,
-        color    : '#3c8dbc',
-        highlight: '#3c8dbc',
-        label    : 'Baik'
-      },
-      {
-        value    : <?php echo $huaweiSummary['unknown'];?>,
-        color    : '#d9dce2',
-        highlight: '#d9dce2',
-        label    : 'Unknown'
-      }
-    ]
-    var pieOptions     = {
-      //Boolean - Whether we should show a stroke on each segment
-      segmentShowStroke    : true,
-      //String - The colour of each segment stroke
-      segmentStrokeColor   : '#fff',
-      //Number - The width of each segment stroke
-      segmentStrokeWidth   : 2,
-      //Number - The percentage of the chart that we cut out of the middle
-      percentageInnerCutout: 50, // This is 0 for Pie charts
-      //Number - Amount of animation steps
-      animationSteps       : 100,
-      //String - Animation easing effect
-      animationEasing      : 'easeOutBounce',
-      //Boolean - Whether we animate the rotation of the Doughnut
-      animateRotate        : true,
-      //Boolean - Whether we animate scaling the Doughnut from the centre
-      animateScale         : false,
-      //Boolean - whether to make the chart responsive to window resizing
-      responsive           : true,
-      // Boolean - whether to maintain the starting aspect ratio or not when responsive, if set to false, will take up entire container
-      maintainAspectRatio  : true,
-      //String - A legend template
-      legendTemplate       : '<ul class="<%=name.toLowerCase()%>-legend"><% for (var i=0; i<segments.length; i++){%><li><span style="background-color:<%=segments[i].fillColor%>"></span><%if(segments[i].label){%><%=segments[i].label%><%}%></li><%}%></ul>'
-    }
-    //Create pie or douhnut chart
-    // You can switch between pie and douhnut using the method below.
-    pieChart.Doughnut(PieData, pieOptions)
+    
 
         //--------------
     //- AREA CHART -
@@ -553,7 +308,7 @@
     // var areaChart       = new Chart(areaChartCanvas)
 
     var areaChartData = {
-      labels  : ['AIR-AP1832I-F-K9', 'AIR-CAP3502I-C-K9', 'AIR-CAP1602I-C-K9', 'AIR-CAP3502E-C-K9', 'AIR-CAP1602E-C-K9', 'WA201DK-NE', 'WA251DT-NE', 'Unknown'],
+      labels  : ['PT1', 'PT2', 'PT3'],
       datasets: [
         {
           fillColor           : 'rgba(18,145,50,0.4)',
@@ -561,7 +316,7 @@
           pointStrokeColor    : 'rgba(60,141,188,1)',
           pointHighlightFill  : '#fff',
           pointHighlightStroke: 'rgba(60,141,188,1)',
-          data                : [<?php print($Cisco1.','.$Cisco2.','.$Cisco3.','.$Cisco4.','.$Cisco5.','.$Huawei1.','.$Huawei2.','.$null);?>]
+          data                : [<?php print($pt1.','.$pt2.','.$pt3);?>]
         }
       ]
     }

@@ -43,6 +43,8 @@ class Crud extends CI_Controller {
 						'no_order' => $_POST['no_order'],
 						'sto' => $_POST['sto'],
 						'no_inet' => $_POST['no_inet'],
+						'lme' => $_POST['lme'],
+						'investasi' => $_POST['investasi']
 					);
 			$this->db->insert('access_point',$data);
 			redirect('auth/index');
@@ -79,6 +81,9 @@ class Crud extends CI_Controller {
 						'no_order' => $_POST['no_order'],
 						'sto' => $_POST['sto'],
 						'no_inet' => $_POST['no_inet'],
+						'lme' => $_POST['lme'],
+						'investasi' => $_POST['investasi'],
+						'last_update_by' => $_SESSION['username']['nama'],
 						'last_update' => $timestamps->format('d-m-Y H:i:s')
 					);
 			$this->db->update('access_point',$data);

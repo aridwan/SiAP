@@ -40,7 +40,8 @@
     </div>
     <br>
     <p class="login-box-msg">Sign in to start your session</p>
-    <?if(isset($error)){?>
+    <?php 
+    if(isset($error)){?>
         <?php
           echo $error;
         }?>

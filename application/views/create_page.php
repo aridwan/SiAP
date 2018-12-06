@@ -101,6 +101,11 @@
             <i class="fa fa-book"></i> <span>Laporan</span>
           </a>
         </li>
+        <li>
+          <a href="<?php echo base_url('index.php/laporan/investasi');?>">
+            <i class="fa fa-money"></i> <span>Laporan Investasi</span>
+          </a>
+        </li>
         <li class="treeview">
           <a href="#">
             <i class="fa fa-edit"></i> <span>Data</span>
@@ -217,6 +222,8 @@
                         <select class="form-control" name="location_type">
                           <option value="Unknown">Unknown</option>
                           <option value="Store">Store</option>
+                          <option value="Store">Progress</option>
+                          <option value="Store">Carried by Technician</option>
                           <option value="Installed">Installed</option>
                         </select>
                       </div>
@@ -326,7 +333,7 @@
                     <div class="form-group">
                       <label for="inputEmail3" class="col-sm-3 control-label">Investasi</label>
                       <div class="col-sm-9">
-                        <input type="text" class="form-control" id="sto" name="investasi" >
+                        <input type="number" class="form-control" id="sto" name="investasi" >
                       </div>
                     </div>
                   </div>

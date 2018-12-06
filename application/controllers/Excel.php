@@ -32,23 +32,25 @@ class Excel extends CI_Controller {
 		$sheet->setCellValue('D1', 'Serial Number');
 		$sheet->setCellValue('E1', 'Mac Address');
 		$sheet->setCellValue('F1', 'Status AP');			
-		$sheet->setCellValue('G1', 'Paket AP');
+		$sheet->setCellValue('G1', 'Site ID');
 		$sheet->setCellValue('H1', 'Location Type');
 		$sheet->setCellValue('I1', 'Customer');
 		$sheet->setCellValue('J1', 'Alamat');
 		$sheet->setCellValue('K1', 'Skema Bisnis');
 		$sheet->setCellValue('L1', 'SSID');
-		$sheet->setCellValue('M1', 'Posisi AP');
-		$sheet->setCellValue('N1', 'Tahun Aktif');
-		$sheet->setCellValue('O1', 'Bulan Aktif');
+		$sheet->setCellValue('M1', 'Keterangan');
+		$sheet->setCellValue('N1', 'Tanggal Aktif');
+		$sheet->setCellValue('O1', 'No Order');
 		$sheet->setCellValue('P1', 'STO');
 		$sheet->setCellValue('Q1', 'No Inet');
-		$sheet->setCellValue('R1', 'Last Update');
+		$sheet->setCellValue('R1', 'LME');
+		$sheet->setCellValue('S1', 'Investasi');
+		$sheet->setCellValue('T1', 'Last Update');
+		$sheet->setCellValue('U1', 'Last Update By');
 
-		$sheet->setCellValue('A'.'2','testing');
+		// $sheet->setCellValue('A'.'2','testing');
 
 		$accessPoints = $this->db->get('access_point')->result_array();
-		
 		for($i=1;$i<=count($accessPoints);$i++){
 			$z=$i+1;
 
@@ -69,7 +71,10 @@ class Excel extends CI_Controller {
 			$sheet->setCellValue('O'.$z,$accessPoints[$i-1]['no_order']);
 			$sheet->setCellValue('P'.$z,$accessPoints[$i-1]['sto']);
 			$sheet->setCellValue('Q'.$z,$accessPoints[$i-1]['no_inet']);
-			$sheet->setCellValue('R'.$z,$accessPoints[$i-1]['last_update']);
+			$sheet->setCellValue('R'.$z,$accessPoints[$i-1]['lme']);
+			$sheet->setCellValue('S'.$z,$accessPoints[$i-1]['investasi']);
+			$sheet->setCellValue('T'.$z,$accessPoints[$i-1]['last_update']);
+			$sheet->setCellValue('U'.$z,$accessPoints[$i-1]['last_update_by']);
 
 		}
 		
@@ -153,6 +158,8 @@ class Excel extends CI_Controller {
 							'no_order' => $sheetData[$i][14],
 							'sto' => $sheetData[$i][15],
 							'no_inet' => $sheetData[$i][16],
+							'lme' => $sheetData[$i][17],
+							'investasi' => $sheetData[$i][18]
 						);
 				$last_id++;
         	}
