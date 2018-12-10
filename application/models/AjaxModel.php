@@ -2,8 +2,8 @@
  class AjaxModel extends CI_Model  
  {  
       var $table = "access_point";  
-      var $select_column = array("id", "merk", "type", "sn", "mac_address", "status_ap", "location_type", "last_update_by", "last_update");  
-      var $order_column = array("id", "merk", "type", "sn", "mac_address", "status_ap", "location_type", "last_update_by", "last_update");  
+      var $select_column = array("id", "merk", "type", "sn", "mac_address", "status_ap", "location_type", "last_update_by", "last_update", "site_id", "customer", "alamat", "skema_bisnis", "ssid", "keterangan", "tanggal_aktif", "no_order", "sto", "no_inet", "lme", "investasi" ,"last_update_by");  
+      var $order_column = array("id", "merk", "type", "sn", "mac_address", "status_ap", "location_type", "last_update_by", "last_update", "site_id", "customer", "alamat", "skema_bisnis", "ssid", "keterangan", "tanggal_aktif", "no_order", "sto", "no_inet", "lme", "investasi" ,"last_update_by");  
 
       function make_query($type,$status_ap,$location_type)  
       {  
