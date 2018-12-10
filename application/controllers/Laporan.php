@@ -52,6 +52,8 @@ class Laporan extends CI_Controller {
 		$this->db->reset_query();
 		$dataAllUnknown = $this->db->query('SELECT COUNT(id) FROM access_point WHERE location_type="Unknown"',FALSE)->result_array();
 		$this->db->reset_query();
+		$dataAllTechnician = $this->db->query('SELECT COUNT(id) FROM access_point WHERE location_type="Carried by Technician"',FALSE)->result_array();
+		$this->db->reset_query();
 		$dataAll = $this->db->query('SELECT COUNT(id) FROM access_point',FALSE)->result_array();
 		$allAPCount['cisco'] = $dataCisco[0]['COUNT(id)'];
 		$allAPCount['huawei'] = $dataHuawei[0]['COUNT(id)'];
@@ -59,6 +61,7 @@ class Laporan extends CI_Controller {
 		$allAPCount['allExisting'] = $dataAll[0]['COUNT(id)'];
 		$allAPCount['allProgress'] = $dataAllProgress[0]['COUNT(id)'];
 		$allAPCount['allUnknown'] = $dataAllUnknown[0]['COUNT(id)'];
+		$allAPCount['allTechnician'] = $dataAllTechnician[0]['COUNT(id)'];
 		
 		return $allAPCount;
 	}

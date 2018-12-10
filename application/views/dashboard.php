@@ -139,6 +139,82 @@
     <!-- Main content -->
     <section class="content">
       <div class="row">
+        <div class="col-md-6">
+          <div class="box box-solid bg-blue-gradient">
+            <div class="box-header">
+              <i class="fa fa-gears"></i>
+
+              <h3 class="box-title">Filter</h3>
+              <!-- tools box -->
+              <div class="pull-right box-tools">
+                <!-- button with a dropdown -->
+                
+                <button type="button" class="btn btn-primary btn-sm" data-widget="collapse"><i class="fa fa-minus"></i>
+                </button>
+                <button type="button" class="btn btn-primary btn-sm" data-widget="remove"><i class="fa fa-times"></i>
+                </button>
+              </div>
+              <!-- /. tools -->
+            </div>
+            <!-- /.box-header -->
+            <div class="box-body">
+              <!--The calendar -->
+              <form autocomplete="off" method="GET" action="<?php echo base_url('index.php/auth/filtered')?>">
+                <div class="row">
+                  <div class="col-md-10">
+                    <div class="input-group">
+                      <div class="input-group-addon">
+                        <i class="fa fa-wifi"></i>
+                      </div>
+                      <input class="form-control" id="datepicker" name="tipe" placeholder="Semua Tipe">
+                    </div>
+                  </div>
+                  <div class="col-md-2">
+                    <input type="submit" class="btn btn-success" value="Filter">
+                  </div>
+                </div>
+                <br>
+                <div class="row">
+                  <div class="col-md-10">
+                    <div class="input-group">
+                      <div class="input-group-addon">
+                        <i class="fa fa-wrench"></i>
+                      </div>
+                      <select class="form-control" name="status_ap">
+                        <option value="">All Status</option>
+                        <option value="Unknown">Unknown</option>
+                        <option value="Baik">Baik</option>
+                        <option value="Rusak">Rusak</option>
+                      </select>
+                      <!-- <input class="form-control" name="no_layanan" placeholder="Status AP"> -->
+                    </div>
+                  </div>
+                </div>
+                <br>
+                <div class="row">
+                  <div class="col-md-10">
+                    <div class="input-group">
+                      <div class="input-group-addon">
+                        <i class="fa fa-map-signs"></i>
+                      </div>
+                      <!-- <input class="form-control" name="prioritas" placeholder="Location type"> -->
+                      <select class="form-control" name="location_type">
+                        <option value="">All location type</option>
+                        <option value="Unknown">Unknown</option>
+                        <option value="Installed">Installed</option>
+                        <option value="Progress">Progress</option>
+                        <option value="Carried By Technician">Carried By Technician</option>
+                        <option value="Store">Store</option>
+                      </select>
+                    </div>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
         <div class="col-lg-12">
           
           <!-- /.box -->

@@ -89,6 +89,13 @@ class Auth extends CI_Controller {
 		}
 	}
 
+	public function filtered() {
+			$query = $this->db->query('SELECT * FROM access_point WHERE type LIKE \'%'.$_GET['tipe'].'\' AND status_ap LIKE \'%'.$_GET['status_ap'].'%\' AND location_type LIKE \'%'.$_GET['location_type'].'%\'');
+			$data['hasil'] = $query->result_array();
+			// print_r($data);
+			$this->load->view('dashboard',$data);
+	}
+
 	public function download()
 	{
 		$spreadsheet = new Spreadsheet();

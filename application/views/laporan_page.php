@@ -136,7 +136,7 @@
     <section class="content">
       <div class="row">
         <!-- ./col -->
-        <div class="col-lg-4">
+        <div class="col-lg-3">
           <!-- small box -->
           <div class="small-box bg-purple">
             <div class="inner">
@@ -151,14 +151,14 @@
             <div class="small-box-footer">CISCO dan HUAWEI</div>
           </div>
         </div>
-        <div class="col-lg-4">
+        <div class="col-lg-3">
           <!-- small box -->
           <div class="small-box bg-red">
             <div class="inner">
 
               <h3><?php echo $allApCount['allProgress'];?>/<?php echo $allApCount['allExisting'];?></h3>
 
-              <p>dalam progress pengadaan (CISCO dan HUAWEI)</p>
+              <p>In progress (CISCO dan HUAWEI)</p>
             </div>
             <div class="icon">
               <i class="fa fa-podcast"></i>
@@ -166,7 +166,22 @@
             <div class="small-box-footer">CISCO dan HUAWEI</div>
           </div>
         </div>
-        <div class="col-lg-4">
+        <div class="col-lg-3">
+          <!-- small box -->
+          <div class="small-box bg-aqua">
+            <div class="inner">
+
+              <h3><?php echo $allApCount['allTechnician'];?>/<?php echo $allApCount['allExisting'];?></h3>
+
+              <p>Technician (CISCO dan HUAWEI)</p>
+            </div>
+            <div class="icon">
+              <i class="fa fa-podcast"></i>
+            </div>
+            <div class="small-box-footer">CISCO dan HUAWEI</div>
+          </div>
+        </div>
+        <div class="col-lg-3">
           <!-- small box -->
           <div class="small-box bg-gray">
             <div class="inner">
