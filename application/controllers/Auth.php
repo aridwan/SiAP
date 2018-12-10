@@ -96,6 +96,37 @@ class Auth extends CI_Controller {
 			$this->load->view('dashboard',$data);
 	}
 
+	public function ajaxDashboard(){
+		$this->load->model('AjaxModel');  
+        $fetch_data = $this->AjaxModel->make_datatables($_POST['type'],$_POST['status_ap'],$_POST['location_type']);  
+        $data = array();  
+        foreach($fetch_data as $row)  
+        {  
+            $sub_array = array();  
+            $sub_array[] = $row->id;  
+            $sub_array[] = $row->merk;  
+            $sub_array[] = $row->type; 
+            $sub_array[] = $row->sn; 
+            $sub_array[] = $row->mac_address; 
+            $sub_array[] = $row->status_ap;  
+            $sub_array[] = $row->location_type;
+            $sub_array[] = $row->last_update_by;
+            $sub_array[] = $row->last_update; 
+            $sub_array[] = 	'<button type="button" name="update" id="'.$row->id.'" class="btn btn-primary btn-sm">Ubah</button>'.
+            				'&nbsp'.
+            				'<button type="button" name="update" id="'.$row->id.'" class="btn btn-danger btn-sm">Hapus</button>';  
+            // $sub_array[] = '<button type="button" name="delete" id="'.$row->id.'" class="btn btn-danger btn-xs">Delete</button>';  
+            $data[] = $sub_array;  
+        }  
+        $output = array(  
+            "draw"              =>     intval($_POST["draw"]),  
+            "recordsTotal"      =>      $this->AjaxModel->get_all_data(),  
+            "recordsFiltered"   =>     $this->AjaxModel->get_filtered_data($_POST['type'],$_POST['status_ap'],$_POST['location_type']),  
+            "data"              =>     $data  
+        );  
+        echo json_encode($output);  
+	}
+
 	public function download()
 	{
 		$spreadsheet = new Spreadsheet();

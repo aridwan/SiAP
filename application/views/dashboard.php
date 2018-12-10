@@ -159,18 +159,18 @@
             <!-- /.box-header -->
             <div class="box-body">
               <!--The calendar -->
-              <form autocomplete="off" method="GET" action="<?php echo base_url('index.php/auth/filtered')?>">
+              <form autocomplete="off" method="GET">
                 <div class="row">
                   <div class="col-md-10">
                     <div class="input-group">
                       <div class="input-group-addon">
                         <i class="fa fa-wifi"></i>
                       </div>
-                      <input class="form-control" id="datepicker" name="tipe" placeholder="Semua Tipe">
+                      <input class="form-control" id="tipe-filter" name="tipe" placeholder="Semua Tipe">
                     </div>
                   </div>
                   <div class="col-md-2">
-                    <input type="submit" class="btn btn-success" value="Filter">
+                    <div class="btn btn-success" id="btn-filter" value="Filter">Filter</div>
                   </div>
                 </div>
                 <br>
@@ -180,7 +180,7 @@
                       <div class="input-group-addon">
                         <i class="fa fa-wrench"></i>
                       </div>
-                      <select class="form-control" name="status_ap">
+                      <select id="status-filter" class="form-control" name="status_ap">
                         <option value="">All Status</option>
                         <option value="Unknown">Unknown</option>
                         <option value="Baik">Baik</option>
@@ -198,7 +198,7 @@
                         <i class="fa fa-map-signs"></i>
                       </div>
                       <!-- <input class="form-control" name="prioritas" placeholder="Location type"> -->
-                      <select class="form-control" name="location_type">
+                      <select id="location-filter" class="form-control" name="location_type">
                         <option value="">All location type</option>
                         <option value="Unknown">Unknown</option>
                         <option value="Installed">Installed</option>
@@ -239,219 +239,6 @@
                   <th>Pilihan</th>
                 </tr>
                 </thead>
-                <tbody>
-                  <?php 
-                  $count = 1;
-                  foreach ($hasil as $row){?>
-                  <tr>
-                    <td><a data-toggle="modal" data-target="#detailModal<?php echo $row['id'];?>"><?php echo $count;?></a></td>
-                    <td><a data-toggle="modal" data-target="#detailModal<?php echo $row['id'];?>"><?php echo $row['merk'];?></a></td>
-                    <td><a data-toggle="modal" data-target="#detailModal<?php echo $row['id'];?>"><?php echo $row['type'];?></a></td>
-                    <td><a data-toggle="modal" data-target="#detailModal<?php echo $row['id'];?>"><?php echo $row['sn'];?></a></td>
-                    <td><a data-toggle="modal" data-target="#detailModal<?php echo $row['id'];?>"><?php echo $row['mac_address'];?></a></td>
-                    <td><a data-toggle="modal" data-target="#detailModal<?php echo $row['id'];?>"><?php echo $row['status_ap'];?></a></td>
-                    <td><a data-toggle="modal" data-target="#detailModal<?php echo $row['id'];?>"><?php echo $row['location_type'];?></a></td>
-                    <td><a data-toggle="modal" data-target="#detailModal<?php echo $row['id'];?>"><?php echo $row['last_update'];?></a></td>
-                    <td><a data-toggle="modal" data-target="#detailModal<?php echo $row['id'];?>"><?php echo $row['last_update_by'];?></a></td>
-                    <td>
-                      <a href="<?php echo base_url('index.php/crud/edit/'.$row['id']);?>">
-                        <button type="button" class="btn btn-primary btn-sm">Ubah</button>
-                      </a>
-                      <button type="button" class="btn btn-danger btn-sm" data-toggle="modal" data-target="#myModal<?php echo $row['id'];?>">
-                      Hapus
-                    </button>
-                    
-                    <!-- Modal Hapus -->
-                    <div class="modal fade" id="myModal<?php echo $row['id'];?>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-                      <div class="modal-dialog" role="document">
-                        <div class="modal-content">
-                          <div class="modal-header">
-                            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                            <h4 class="modal-title" id="myModalLabel">Peringatan</h4>
-                          </div>
-                          <div class="modal-body">
-                            Apakah anda yakin akan menghapus data tersebut ?
-                          </div>
-                          <div class="modal-footer">
-                            <button type="button" class="btn btn-default" data-dismiss="modal">Tidak</button>
-                            <a href="<?php echo base_url('index.php/crud/delete/'.$row['id']);?>"><button type="button" class="btn btn-danger">Hapus</button></a>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-
-                    <!-- Modal detail -->
-                    <div class="modal fade bs-example-modal-lg" id="detailModal<?php echo $row['id'];?>" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
-                      <div class="modal-dialog modal-lg" role="document">
-                        <div class="modal-content">
-                          <div class="modal-header">
-                            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                            <h4 class="modal-title" id="myModalLabel">Detail Access Point</h4>
-                          </div>
-                          <div class="modal-body">
-                            <div class="row">
-                              <div class="col-md-3">
-                                <label for="inputEmail3" class="col-sm-3 control-label">Merk</label>
-                              </div>
-                              <div class="col-md-3">
-                                <?php echo $row['merk'];?>
-                              </div>
-                              <div class="col-md-3">
-                                <label for="inputEmail3" class="col-sm-3 control-label">Tipe</label>
-                              </div>
-                              <div class="col-md-3">
-                                <?php echo $row['type'];?>
-                              </div>
-                            </div>
-                            <div class="row">
-                              <div class="col-md-3">
-                                <label for="inputEmail3" class="col-sm-3 control-label">Serial Number</label>
-                              </div>
-                              <div class="col-md-3">
-                                <?php echo $row['sn'];?>
-                              </div>
-                              <div class="col-md-3">
-                                <label for="inputEmail3" class="col-sm-3 control-label">Mac Address</label>
-                              </div>
-                              <div class="col-md-3">
-                                <?php echo $row['mac_address'];?>
-                              </div>
-                            </div>
-                            <div class="row">
-                              <div class="col-md-3">
-                                <label for="inputEmail3" class="col-sm-3 control-label">Status AP</label>
-                              </div>
-                              <div class="col-md-3">
-                                <?php echo $row['status_ap'];?>
-                              </div>
-                              <div class="col-md-3">
-                                <label for="inputEmail3" class="col-sm-3 control-label">Paket AP</label>
-                              </div>
-                              <div class="col-md-3">
-                                <?php echo $row['site_id'];?>
-                              </div>
-                            </div>
-                            <div class="row">
-                              <div class="col-md-3">
-                                <label for="inputEmail3" class="col-sm-3 control-label">Location Type</label>
-                              </div>
-                              <div class="col-md-3">
-                                <?php echo $row['location_type'];?>
-                              </div>
-                              <div class="col-md-3">
-                                <label for="inputEmail3" class="col-sm-3 control-label">Customer</label>
-                              </div>
-                              <div class="col-md-3">
-                                <?php echo $row['customer'];?>
-                              </div>
-                            </div>
-                            <div class="row">
-                              <div class="col-md-3">
-                                <label for="inputEmail3" class="col-sm-3 control-label">Alamat</label>
-                              </div>
-                              <div class="col-md-3">
-                                <?php echo $row['alamat'];?>
-                              </div>
-                              <div class="col-md-3">
-                                <label for="inputEmail3" class="col-sm-3 control-label">Skema Bisnis</label>
-                              </div>
-                              <div class="col-md-3">
-                                <?php echo $row['skema_bisnis'];?>
-                              </div>
-                            </div>
-                            <div class="row">
-                              <div class="col-md-3">
-                                <label for="inputEmail3" class="col-sm-3 control-label">SSID</label>
-                              </div>
-                              <div class="col-md-3">
-                                <?php echo $row['ssid'];?>
-                              </div>
-                              <div class="col-md-3">
-                                <label for="inputEmail3" class="col-sm-3 control-label">Posisi AP</label>
-                              </div>
-                              <div class="col-md-3">
-                                <?php echo $row['keterangan'];?>
-                              </div>
-                            </div>
-                            <div class="row">
-                              <div class="col-md-3">
-                                <label for="inputEmail3" class="col-sm-3 control-label">Tahun Aktif</label>
-                              </div>
-                              <div class="col-md-3">
-                                <?php echo $row['tanggal_aktif'];?>
-                              </div>
-                              <div class="col-md-3">
-                                <label for="inputEmail3" class="col-sm-3 control-label">Bulan Aktif</label>
-                              </div>
-                              <div class="col-md-3">
-                                <?php echo $row['no_order'];?>
-                              </div>
-                            </div>
-                            <div class="row">
-                              <div class="col-md-3">
-                                <label for="inputEmail3" class="col-sm-3 control-label">STO</label>
-                              </div>
-                              <div class="col-md-3">
-                                <?php echo $row['sto'];?>
-                              </div>
-                              <div class="col-md-3">
-                                <label for="inputEmail3" class="col-sm-3 control-label">No Inet</label>
-                              </div>
-                              <div class="col-md-3">
-                                <?php echo $row['no_inet'];?>
-                              </div>
-                            </div>
-                            <div class="row">
-                              <div class="col-md-3">
-                                <label for="inputEmail3" class="col-sm-3 control-label">LME</label>
-                              </div>
-                              <div class="col-md-3">
-                                <?php echo $row['lme'];?>
-                              </div>
-                              <div class="col-md-3">
-                                <label for="inputEmail3" class="col-sm-3 control-label">Investasi</label>
-                              </div>
-                              <div class="col-md-3">
-                                <?php echo $row['investasi'];?>
-                              </div>
-                            </div>
-                            <div class="row">
-                              <div class="col-md-3">
-                                <label for="inputEmail3" class="col-sm-3 control-label">Last Update By</label>
-                              </div>
-                              <div class="col-md-3">
-                                <?php echo $row['last_update_by'];?>
-                              </div>
-                            </div>
-                          </div>
-
-                          <div class="modal-footer">
-                            
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="modal fade" id="detailModal<?php echo $row['id'];?>" tabindex="-1" role="dialog" aria-labelledby="detailModalLabel">
-                      <div class="modal-dialog" role="document">
-                        <div class="modal-content">
-                          <div class="modal-header">
-                            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                            <h4 class="modal-title" id="myModalLabel">Detail Access Point</h4>
-                          </div>
-                          <div class="modal-body">
-                            
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-
-                    </td>
-                  </tr>
-                <?php 
-                  $count++;
-                }?>
-                </tbody>
-                
               </table>
             </div>
             <!-- /.box-body -->
@@ -588,17 +375,48 @@
 <script src="https://adminlte.io/themes/AdminLTE/dist/js/demo.js"></script>
 <!-- page script -->
 <script>
-  $(function () {
-    $('#example1').DataTable()
-    $('#example2').DataTable({
-      'paging'      : true,
-      'lengthChange': false,
-      'searching'   : false,
-      'ordering'    : true,
-      'info'        : true,
-      'autoWidth'   : false
-    })
-  })
+  $(document).ready(function(){
+
+    fill_dataTable();
+
+      function fill_dataTable(filter_tipe = '', filter_status = '', filter_lokasi = ''){
+      var dataTable = $('#example1').DataTable({  
+           "processing":true,  
+           "serverSide":true,  
+           "order":[],  
+           "ajax":{  
+                'url': "<?php echo base_url('index.php/auth/ajaxDashboard'); ?>",  
+                'type': "POST",
+                'data': {
+                  type: $('#tipe-filter').val(),
+                  status_ap: $('#status-filter').val(),
+                  location_type: $('#location-filter').val()
+                }
+           },  
+           "columnDefs":[  
+                {  
+                     "targets":[9],  
+                     "orderable":false,  
+                },  
+           ],  
+      });  
+    }
+
+    $('#btn-filter').click(function(){
+      var filter_tipe = $('#tipe-filter').val();
+      var filter_status = $('#status-filter').val();
+      var filter_lokasi = $('#location-filter').val();
+      // if(filter_gender != '' && filter_country != '') {
+        $('#example1').DataTable().destroy();
+        fill_dataTable(filter_tipe, filter_status, filter_lokasi);
+      // } else {
+      //   alert('Select Both filter option');
+      //   $('#customer_data').DataTable().destroy();
+      //   fill_datatable();
+      
+  });
+
+ });  
 </script>
 </body>
 </html>
