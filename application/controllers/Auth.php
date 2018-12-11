@@ -112,7 +112,7 @@ class Auth extends CI_Controller {
             $sub_array[] = '<a data-toggle="modal" data-target="#detailModal'.$row->id.'">'.$row->location_type.'</a>';
             $sub_array[] = '<a data-toggle="modal" data-target="#detailModal'.$row->id.'">'.$row->last_update_by.'</a>';
             $sub_array[] = '<a data-toggle="modal" data-target="#detailModal'.$row->id.'">'.$row->last_update.'</a>'; 
-            $sub_array[] = 	'<button type="button" name="update" id="'.$row->id.'" class="btn btn-primary btn-sm">Ubah</button>'.
+            $sub_array[] = 	'<a href="'.base_url('index.php/crud/edit/').$row->id.'"><button type="button" name="update" id="'.$row->id.'" class="btn btn-primary btn-sm">Ubah</button></a>'.
             				'&nbsp'.
             				'<button type="button" name="update" id="'.$row->id.'" data-toggle="modal" data-target="#myModal'.$row->id.'"class="btn btn-danger btn-sm">Hapus</button>'.
 	            				'<div class="modal fade" id="myModal'.$row->id.'" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
