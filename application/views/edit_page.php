@@ -253,7 +253,7 @@
                           <?php if($location_type=="Carried by Technician"){
                             echo 'selected=""';
                           }?>
-                          >Progress</option>
+                          >Carried by Technician</option>
                           <option value="Installed"
                           <?php if($location_type=="Installed"){
                             echo 'selected=""';

@@ -96,7 +96,6 @@
             <i class="fa fa-dashboard"></i> <span>Dashboard</span>
           </a>
         </li>
-        <?php if($_SESSION['username']['role'] == 'Administrator'){?>
         <li>
           <a href="<?php echo base_url('index.php/laporan');?>">
             <i class="fa fa-book"></i> <span>Laporan</span>
@@ -121,11 +120,10 @@
           </ul>
         </li>
         <li>
-          <a href="<?php echo base_url('index.php/crud/userManagement');?>">
+          <a href="<?php echo base_url('index.php/crud/user_management');?>">
             <i class="fa fa-user"></i> <span>User Management</span>
           </a>
         </li>
-      <?php }?>
       </ul>
     </section>
     <!-- /.sidebar -->
@@ -136,7 +134,7 @@
     <!-- Content Header (Page header) -->
     <section class="content-header">
       <h1>
-        Import Excel
+        Data User
       </h1>
       <ol class="breadcrumb">
         <li><i class="fa fa-dashboard"></i> Home</li>
@@ -145,31 +143,43 @@
 
     <!-- Main content -->
     <section class="content">
+      
       <div class="row">
         <div class="col-lg-12">
           
           <!-- /.box -->
 
-          <div class="box box-primary">
+          <div class="box">
+            <div class="box-header">
+            </div>
             <!-- /.box-header -->
-            <!-- form start -->
-            <form action="<?php echo base_url('index.php/excel/upload');?>" enctype="multipart/form-data" method="post" accept-charset="utf-8">
-              <div class="box-body">
-                <label class="control-label col-md-offset-4">Masukkan Excel</label>
-                <div class="row">
-                  <div class="col-md-4 col-md-offset-4">
-                    <div class="form-group">
-                      <input class="form-control" type="file" name="userfile">
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <!-- /.box-body -->
-              <div class="box-footer">
-                <button type="submit" class="btn btn-success pull-right">Simpan</button>
-              </div>
-              <!-- /.box-footer -->
-            </form>
+            <div class="box-body">
+              <table id="example1" class="table table-bordered table-striped">
+                <thead>
+                <tr>
+                  <th>No</th>
+                  <th>Username</th>
+                  <th>Nama</th>
+                  <th>Role</th>
+                  <th>Pilihan</th>
+                </tr>
+                </thead>
+                <tbody>
+                  <?php foreach($hasil as $row) {?>
+                    <tr>
+                      <td><?php echo $row['id'];?></td>
+                      <td><?php echo $row['username'];?></td>
+                      <td><?php echo $row['nama'];?></td>
+                      <td><?php echo $row['role'];?></td>
+                      <td>
+                        <a href="<?php echo base_url('index.php/crud/resetPassword/'.$row['id']);?>"><button class="btn bg-purple">Reset</button></a>
+                      </td>
+                    </tr>
+                  <?php }?>
+                </tbody>
+              </table>
+            </div>
+            <!-- /.box-body -->
           </div>
           <!-- /.box -->
         </div>
@@ -303,17 +313,11 @@
 <script src="https://adminlte.io/themes/AdminLTE/dist/js/demo.js"></script>
 <!-- page script -->
 <script>
-  $(function () {
-    $('#example1').DataTable()
-    $('#example2').DataTable({
-      'paging'      : true,
-      'lengthChange': false,
-      'searching'   : false,
-      'ordering'    : true,
-      'info'        : true,
-      'autoWidth'   : false
-    })
-  })
+  $(document).ready(function(){
+
+    $("#example1").DataTable();
+
+ });  
 </script>
 </body>
 </html>

@@ -13,13 +13,13 @@
            $this->db->like('type', $type);
            $this->db->like('status_ap', $status_ap);
            $this->db->like('location_type', $location_type);    
-           if(isset($_POST["search"]["value"]))  
+           if($_POST["search"]["value"] != '')  
            {  
                 // $this->db->like("id", $_POST["search"]["value"]);  
-                // $this->db->like("merk", $_POST["search"]["value"]);  
+                $this->db->like("merk", $_POST["search"]["value"]);  
                 // $this->db->like("type", $_POST["search"]["value"]);  
-                $this->db->like("sn", $_POST["search"]["value"]);  
-                // $this->db->like("mac_address", $_POST["search"]["value"]);  
+                $this->db->or_like("sn", $_POST["search"]["value"]);  
+                $this->db->or_like("mac_address", $_POST["search"]["value"]);  
                 // $this->db->like("status_ap", $_POST["search"]["value"]);  
                 // $this->db->like("location_type", $_POST["search"]["value"]);  
                 // $this->db->like("last_update_by", $_POST["search"]["value"]);  

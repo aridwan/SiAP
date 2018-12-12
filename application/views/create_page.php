@@ -96,6 +96,7 @@
             <i class="fa fa-dashboard"></i> <span>Dashboard</span>
           </a>
         </li>
+        <?php if($_SESSION['username']['role'] == 'Administrator'){?>
         <li>
           <a href="<?php echo base_url('index.php/laporan');?>">
             <i class="fa fa-book"></i> <span>Laporan</span>
@@ -119,6 +120,12 @@
             <li><a href="<?php echo base_url('index.php/excel/export');?>"><i class="fa fa-circle-o"></i> Export</a></li>
           </ul>
         </li>
+        <li>
+          <a href="<?php echo base_url('index.php/crud/userManagement');?>">
+            <i class="fa fa-user"></i> <span>User Management</span>
+          </a>
+        </li>
+      <?php }?>
       </ul>
     </section>
     <!-- /.sidebar -->
@@ -169,7 +176,16 @@
                     <div class="form-group">
                       <label for="inputEmail3" class="col-sm-3 control-label">Tipe</label>
                       <div class="col-sm-9">
-                        <input type="text" class="form-control" id="tipe" name="tipe" >
+                        <select class="form-control" id="tipe" name="tipe">
+                          <option value="AIR-AP18321-F-K9">AIR-AP18321-F-K9</option>
+                          <option value="AIR-CAP3502I-C-K9">AIR-CAP3502I-C-K9</option>
+                          <option value="AIR-CAP1602I-C-K9">AIR-CAP1602I-C-K9</option>
+                          <option value="AIR-CAP3502E-C-K9">AIR-CAP3502E-C-K9</option>
+                          <option value="AIR-CAP1602E-C-K9">AIR-CAP1602E-C-K9</option>
+                          <option value="WA201DK-NE">WA201DK-NE</option>
+                          <option value="WA251DT-NE">WA251DT-NE</option>
+                          <option value="Unknown">Unknown</option>
+                        </select>
                       </div>
                     </div>
                   </div>

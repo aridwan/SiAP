@@ -95,6 +95,7 @@
             <i class="fa fa-dashboard"></i> <span>Dashboard</span>
           </a>
         </li>
+        <?php if($_SESSION['username']['role'] == 'Administrator'){?>
         <li>
           <a href="<?php echo base_url('index.php/laporan');?>">
             <i class="fa fa-book"></i> <span>Laporan</span>
@@ -118,6 +119,12 @@
             <li><a href="<?php echo base_url('index.php/excel/export');?>"><i class="fa fa-circle-o"></i> Export</a></li>
           </ul>
         </li>
+        <li>
+          <a href="<?php echo base_url('index.php/crud/userManagement');?>">
+            <i class="fa fa-user"></i> <span>User Management</span>
+          </a>
+        </li>
+      <?php }?>
       </ul>
     </section>
     <!-- /.sidebar -->
@@ -234,7 +241,7 @@
         <div class="col-md-12">
           <div class="box box-info">
             <div class="box-header with-border">
-              <h3 class="box-title">Tipe AP Tersedia di Gudang</h3>
+              <h3 class="box-title">Tipe AP Tersedia di Gudang (Kondisi  Baik)</h3>
                 <div class="box-tools pull-right">
                   <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>
                   </button>
